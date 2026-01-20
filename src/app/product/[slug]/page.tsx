@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
     CheckCircle2, XCircle, AlertCircle, ShieldCheck, Activity, Scan, Eye, Minimize, Hash,
-    ChevronRight, Download, ArrowRight, Zap, Layers, Settings, BarChart3, ChevronDown
+    ChevronRight, Download, ArrowRight, Zap, Layers, Settings, BarChart3, ChevronDown, Cpu
 } from 'lucide-react';
 import { products } from '@/data/products';
 import Header from '@/components/Header';
@@ -152,28 +152,61 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
             {/* --- 2. DEEP DIVE SECTIONS (Sequential Layout) --- */}
 
-            {/* A. ADVANCED FEATURES */}
-            <section className="py-24 bg-white">
+            {/* A. ADVANCED FEATURES (Compact Tech Grid) */}
+            <section className="py-16 bg-white">
                 <div className="container mx-auto px-6 md:px-8">
-                    <div className="text-center mb-20 max-w-3xl mx-auto">
-                        <span className="text-primary font-bold text-xs tracking-widest uppercase mb-4 block">Core Architecture</span>
-                        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Engineered for Excellence</h2>
-                        <p className="text-slate-600 text-lg font-medium">Every component is meticulously designed to deliver superior performance, longevity, and efficiency in industrial environments.</p>
+                    <div className="flex flex-col md:flex-row items-end justify-between mb-10 gap-6">
+                        <div>
+                            <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">Core Architecture</span>
+                            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">System Capabilities</h2>
+                        </div>
+                        <p className="text-slate-500 text-sm max-w-md text-right hidden md:block font-medium">
+                            Next-gen engineering compressed into a compact, high-efficiency footprint.
+                        </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px]">
                         {product.features.map((feature, i) => {
                             const Icon = IconMap[feature.icon] || Activity;
+                            // Make the first item span 2 cols for variety
+                            const isLarge = i === 0;
+
                             return (
-                                <div key={i} className="group p-10 rounded-[2rem] bg-[#F8FAFC] hover:bg-white border border-transparent hover:border-slate-100 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                                        <Icon className="w-32 h-32 text-slate-900 transform rotate-12" />
+                                <div
+                                    key={i}
+                                    className={`
+                                        group relative rounded-2xl overflow-hidden border border-slate-100 bg-slate-50 hover:border-emerald-500/30 transition-all duration-500
+                                        ${isLarge ? 'col-span-2 row-span-2 md:col-span-2 md:row-span-2' : 'col-span-1 row-span-1'}
+                                    `}
+                                >
+                                    {/* Hover Gradient Background */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/0 to-emerald-500/0 group-hover:from-emerald-500/5 group-hover:to-emerald-500/10 transition-all duration-500" />
+
+                                    <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
+                                        <div className="flex justify-between items-start">
+                                            <div className={`
+                                                rounded-xl flex items-center justify-center text-slate-600 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm
+                                                ${isLarge ? 'w-14 h-14 bg-white' : 'w-10 h-10 bg-white'}
+                                            `}>
+                                                <Icon className={isLarge ? "w-7 h-7" : "w-5 h-5"} />
+                                            </div>
+                                            <ArrowRight className="w-4 h-4 text-slate-300 -rotate-45 group-hover:rotate-0 group-hover:text-emerald-500 transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                                        </div>
+
+                                        <div>
+                                            <h3 className={`font-bold text-slate-900 mb-2 leading-tight ${isLarge ? 'text-2xl' : 'text-sm'}`}>
+                                                {feature.title}
+                                            </h3>
+                                            <p className={`text-slate-500 font-medium leading-relaxed transition-all duration-500 ${isLarge ? 'text-sm line-clamp-3' : 'text-[10px] opacity-0 group-hover:opacity-100 h-0 group-hover:h-auto'}`}>
+                                                {feature.description}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-slate-600 mb-8 relative z-10 group-hover:scale-110 transition-transform border border-slate-100 group-hover:bg-primary group-hover:text-white">
-                                        <Icon className="w-8 h-8" />
+
+                                    {/* Decorative Tech Lines */}
+                                    <div className="absolute bottom-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
+                                        <Icon className="w-24 h-24 transform -rotate-12 translate-x-4 translate-y-4" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-4 relative z-10">{feature.title}</h3>
-                                    <p className="text-slate-500 leading-relaxed relative z-10 text-sm font-medium">{feature.description}</p>
                                 </div>
                             )
                         })}
@@ -320,6 +353,102 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* F. HEAD-TO-HEAD BATTLE (Compact Marketing Version) */}
+            <section className="py-20 bg-[#0B1121] text-white relative overflow-hidden">
+                <div className="container mx-auto px-6 max-w-5xl relative z-10">
+                    <div className="text-center mb-10">
+                        <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 block">The Clear Choice</span>
+                        <h2 className="text-3xl font-extrabold tracking-tight text-white">Why leaders switch to Cardwell</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 bg-slate-800/50 rounded-3xl border border-slate-700 overflow-hidden shadow-2xl">
+                        {/* LEFT: THE OLD WAY */}
+                        <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-slate-700 relative">
+                            <div className="absolute inset-0 bg-rose-500/5 pointer-events-none" />
+                            <h3 className="text-slate-400 font-bold uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
+                                <XCircle className="w-4 h-4" /> Standard Machinery
+                            </h3>
+                            <div className="space-y-6">
+                                <div className="flex gap-4 opacity-60 grayscale transition-all hover:grayscale-0 hover:opacity-100">
+                                    <AlertCircle className="w-6 h-6 text-rose-500 shrink-0 mt-1" />
+                                    <div>
+                                        <div className="font-bold text-slate-300">Unpredictable Shrinkage</div>
+                                        <div className="text-xs text-slate-500 mt-1">Varies 3-5% per batch</div>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4 opacity-60 grayscale transition-all hover:grayscale-0 hover:opacity-100">
+                                    <Zap className="w-6 h-6 text-rose-500 shrink-0 mt-1" />
+                                    <div>
+                                        <div className="font-bold text-slate-300">High Energy Costs</div>
+                                        <div className="text-xs text-slate-500 mt-1">Outdated heating systems</div>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4 opacity-60 grayscale transition-all hover:grayscale-0 hover:opacity-100">
+                                    <Settings className="w-6 h-6 text-rose-500 shrink-0 mt-1" />
+                                    <div>
+                                        <div className="font-bold text-slate-300">Manual Tuning</div>
+                                        <div className="text-xs text-slate-500 mt-1">Operator errors common</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* RIGHT: THE NEW WAY */}
+                        <div className="p-8 md:p-12 bg-emerald-900/10 relative">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/20 blur-[50px] -translate-y-1/2 translate-x-1/2 rounded-full pointer-events-none" />
+                            <h3 className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
+                                <CheckCircle2 className="w-4 h-4" /> Cardwell Advantage
+                            </h3>
+                            <div className="space-y-6">
+                                <div className="flex gap-4">
+                                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0 mt-1">
+                                        <Scan className="w-3.5 h-3.5" />
+                                    </div>
+                                    <div>
+                                        <div className="font-bold text-white">Guaranteed &lt; 1% Shrinkage</div>
+                                        <div className="text-xs text-emerald-200/60 mt-1">Consistent every time</div>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0 mt-1">
+                                        <Activity className="w-3.5 h-3.5" />
+                                    </div>
+                                    <div>
+                                        <div className="font-bold text-white">40% Energy Savings</div>
+                                        <div className="text-xs text-emerald-200/60 mt-1">Smart heat recovery</div>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0 mt-1">
+                                        <Cpu className="w-3.5 h-3.5" />
+                                    </div>
+                                    <div>
+                                        <div className="font-bold text-white">AI Auto-Pilot</div>
+                                        <div className="text-xs text-emerald-200/60 mt-1">Zero operator dependency</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ROI Banner */}
+                    <div className="mt-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between shadow-lg shadow-emerald-500/20">
+                        <div className="flex items-center gap-4 mb-4 md:mb-0">
+                            <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm text-white">
+                                <BarChart3 className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <div className="text-xs font-bold text-emerald-100 uppercase tracking-wider">Business Impact</div>
+                                <div className="text-white font-black text-lg">Typical ROI in just 14 Months</div>
+                            </div>
+                        </div>
+                        <button className="px-6 py-2 bg-white text-emerald-700 font-bold rounded-full text-sm hover:bg-emerald-50 transition-colors shadow-sm">
+                            Calculate Your Savings
+                        </button>
                     </div>
                 </div>
             </section>
