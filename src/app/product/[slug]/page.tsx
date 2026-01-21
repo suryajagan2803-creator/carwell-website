@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
     CheckCircle2, XCircle, AlertCircle, ShieldCheck, Activity, Scan, Eye, Minimize, Hash,
-    ChevronRight, Download, ArrowRight, Zap, Layers, Settings, BarChart3, ChevronDown, Cpu
+    ChevronRight, Download, ArrowRight, Zap, Layers, Settings, BarChart3, ChevronDown, Cpu, Grid, PlayCircle
 } from 'lucide-react';
 import { products } from '@/data/products';
 import Header from '@/components/Header';
@@ -214,244 +214,108 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                 </div>
             </section>
 
-            {/* B. TECHNICAL SPECIFICATIONS */}
-            <section className="py-24 bg-slate-50 relative overflow-hidden">
-                <div className="container mx-auto px-6 md:px-8 relative z-10">
-                    <div className="bg-white rounded-[3rem] p-10 md:p-16 shadow-xl shadow-slate-200/50 border border-slate-100">
-                        <div className="flex flex-col lg:flex-row gap-16">
-                            <div className="lg:w-1/3">
-                                <span className="text-primary font-bold text-xs tracking-widest uppercase mb-4 block">Data Sheet</span>
-                                <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-slate-900 tracking-tight">Technical<br />Specifications</h2>
-                                <p className="text-slate-500 mb-8 leading-relaxed font-medium">
-                                    Detailed operating parameters and physical characteristics. We ensure transparency in our engineering capabilities.
-                                </p>
-                                <button className="text-primary hover:text-slate-900 transition-colors flex items-center gap-2 font-bold text-sm uppercase tracking-wide group">
-                                    Download Full Spec Sheet <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-                                </button>
+            {/* B. & C. SPLIT SPECS & COMPARISON LAYOUT */}
+            <section className="py-12 bg-slate-50 border-b border-slate-200">
+                <div className="container mx-auto px-4 md:px-6">
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                        {/* LEFT: SPECIFICATIONS CARD (Light Theme) */}
+                        <div className="lg:col-span-4 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden h-full">
+                            <div className="p-6 border-b border-slate-100 flex items-center gap-2">
+                                <Activity className="w-5 h-5 text-slate-900" />
+                                <h3 className="font-bold text-slate-900 text-lg">Specifications</h3>
+                            </div>
+                            <div className="divide-y divide-slate-100">
+                                {product?.specs?.map((spec, i) => (
+                                    <div key={i} className="p-5 flex flex-col gap-1 hover:bg-slate-50 transition-colors">
+                                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wide">{spec.label}</div>
+                                        <div className="font-medium text-slate-900">{spec.value}</div>
+                                    </div>
+                                ))}
+                                <div className="p-5 flex flex-col gap-1 hover:bg-slate-50 transition-colors">
+                                    <div className="text-xs font-bold text-slate-500 uppercase tracking-wide">Warranty</div>
+                                    <div className="font-medium text-slate-900">2 Years Standard</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* RIGHT: COMPARISON CARD (Dark Theme) */}
+                        <div className="lg:col-span-8 bg-[#0F172A] rounded-3xl p-6 md:p-8 md:min-h-[500px] flex flex-col relative overflow-hidden shadow-2xl">
+                            {/* Background Elements */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4 relative z-10">
+                                <div>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Why Cardwell Stands Out</h2>
+                                    <p className="text-slate-400 text-sm">Compare features directly against market standards.</p>
+                                </div>
+
+                                {/* Toggle Buttons */}
+                                <div className="flex bg-slate-800/50 p-1 rounded-lg border border-slate-700/50">
+                                    <button className="flex items-center gap-2 px-4 py-2 bg-slate-700 rounded-md text-white text-xs font-bold shadow-sm transition-all border border-slate-600">
+                                        <Grid className="w-3 h-3" /> Table View
+                                    </button>
+                                    <button className="flex items-center gap-2 px-4 py-2 text-slate-400 hover:text-white rounded-md text-xs font-bold transition-all hover:bg-slate-700/50">
+                                        <PlayCircle className="w-3 h-3" /> Video Compare
+                                    </button>
+                                </div>
                             </div>
 
-                            <div className="lg:w-2/3">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                                    {product.specs.map((spec, i) => (
-                                        <div key={i} className="border-b border-slate-100 pb-4">
-                                            <div className="text-xs text-slate-400 uppercase tracking-widest mb-2 font-bold">{spec.label}</div>
-                                            <div className="text-xl font-bold text-slate-900">{spec.value}</div>
+                            {/* Comparison Table */}
+                            <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 overflow-hidden relative z-10">
+                                {/* Table Header */}
+                                <div className="grid grid-cols-12 bg-slate-800/80 border-b border-slate-700 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                    <div className="col-span-6 p-4 md:pl-8">Feature</div>
+                                    <div className="col-span-3 p-4 text-center text-emerald-400">Cardwell</div>
+                                    <div className="col-span-3 p-4 text-center text-slate-500">Standard</div>
+                                </div>
+
+                                {/* Table Body */}
+                                <div className="divide-y divide-slate-700/50">
+                                    {[
+                                        { name: "Bio-Dust Suction", cardwell: true, standard: false },
+                                        { name: "Traction-Free Air System", cardwell: true, standard: false },
+                                        { name: "Multi-Lot Capability", cardwell: true, standard: true },
+                                        { name: "SS Construction", cardwell: true, standard: true },
+                                        { name: "AI Tension Control", cardwell: true, standard: false },
+                                        { name: "Zero Shrinkage Guarantee", cardwell: true, standard: false }
+                                    ].map((row, i) => (
+                                        <div key={i} className="grid grid-cols-12 items-center hover:bg-white/5 transition-colors group">
+                                            <div className="col-span-6 p-4 md:pl-8 font-medium text-slate-200 text-sm">{row.name}</div>
+                                            <div className="col-span-3 p-4 flex justify-center">
+                                                {row.cardwell ? (
+                                                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                                                        <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-6 h-6 rounded-full bg-slate-700/50 flex items-center justify-center">
+                                                        <XCircle className="w-4 h-4 text-slate-500" />
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="col-span-3 p-4 flex justify-center opacity-40 group-hover:opacity-100 transition-opacity">
+                                                {row.standard ? (
+                                                    <div className="w-6 h-6 rounded-full flex items-center justify-center">
+                                                        <CheckCircle2 className="w-4 h-4 text-slate-400" />
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-6 h-6 rounded-full flex items-center justify-center">
+                                                        <XCircle className="w-4 h-4 text-rose-800" />
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* C. MARKET COMPARISON - DETAILS & HIGHLIGHTS */}
-            <section className="py-24 bg-white">
-                <div className="container mx-auto px-6 md:px-8">
-                    <div className="text-center mb-16 max-w-4xl mx-auto">
-                        <span className="text-primary font-bold text-xs tracking-widest uppercase mb-4 block">Performance Benchmark</span>
-                        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">The Cardwell Difference</h2>
-                        <p className="text-slate-600 text-lg font-medium">
-                            See specifically how our engineering outperforms standard market alternatives in critical production metrics.
-                        </p>
-                    </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-slate-200 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/40">
-                        {/* Column 1: Standard Market Solutions */}
-                        <div className="bg-slate-50 p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-slate-200">
-                            <div className="flex items-center gap-4 mb-10 opacity-60">
-                                <AlertCircle className="w-8 h-8 text-slate-400" />
-                                <h3 className="text-2xl font-bold text-slate-500">Standard Machinery</h3>
-                            </div>
-
-                            <div className="space-y-10">
-                                <div className="group">
-                                    <h4 className="font-bold text-slate-700 mb-2 flex items-center gap-2">
-                                        <XCircle className="w-5 h-5 text-rose-400" /> Mechanical Agitation
-                                    </h4>
-                                    <p className="text-slate-500 text-sm leading-relaxed pl-7">
-                                        Relies on harsh beaters and friction that can damage delicate fibers, leading to higher piling and reduced fabric strength over time.
-                                    </p>
-                                </div>
-
-                                <div className="group">
-                                    <h4 className="font-bold text-slate-700 mb-2 flex items-center gap-2">
-                                        <XCircle className="w-5 h-5 text-rose-400" /> High Chemical Dependency
-                                    </h4>
-                                    <p className="text-slate-500 text-sm leading-relaxed pl-7">
-                                        Requires significant chemical softeners to achieve desired hand-feel, increasing operational costs and environmental footprint.
-                                    </p>
-                                </div>
-
-                                <div className="group">
-                                    <h4 className="font-bold text-slate-700 mb-2 flex items-center gap-2">
-                                        <XCircle className="w-5 h-5 text-rose-400" /> Static Airflow
-                                    </h4>
-                                    <p className="text-slate-500 text-sm leading-relaxed pl-7">
-                                        Fixed air channels create uneven drying zones, resulting in inconsistent shrinkage control and patchy dye absorption.
-                                    </p>
-                                </div>
-                                <div className="group">
-                                    <h4 className="font-bold text-slate-700 mb-2 flex items-center gap-2">
-                                        <XCircle className="w-5 h-5 text-rose-400" /> Manual Calibration
-                                    </h4>
-                                    <p className="text-slate-500 text-sm leading-relaxed pl-7">
-                                        Operators must manually adjust tension settings, leading to human error and batch-to-batch variations.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Column 2: Cardwell Advantage */}
-                        <div className="bg-white p-10 md:p-14 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
-
-                            <div className="flex items-center gap-4 mb-10 relative z-10">
-                                <CheckCircle2 className="w-8 h-8 text-emerald-500" />
-                                <h3 className="text-2xl font-bold text-slate-900">Cardwell Series 2026</h3>
-                            </div>
-
-                            <div className="space-y-10 relative z-10">
-                                <div className="group">
-                                    <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2 text-lg">
-                                        <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600"><CheckCircle2 className="w-3 h-3" /></span>
-                                        Aero-Dynamic Tumbling
-                                    </h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed pl-7 font-medium">
-                                        Uses high-velocity air currents to gently tumble fabric against a cushion of air. This preserves fiber integrity while achieving maximum loft and softness.
-                                    </p>
-                                </div>
-
-                                <div className="group">
-                                    <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2 text-lg">
-                                        <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600"><CheckCircle2 className="w-3 h-3" /></span>
-                                        Chemical-Free Softening
-                                    </h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed pl-7 font-medium">
-                                        Achieves 40% better softness purely through mechanical airflow action, drastically reducing the need for chemical agents and water usage.
-                                    </p>
-                                </div>
-
-                                <div className="group">
-                                    <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2 text-lg">
-                                        <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600"><CheckCircle2 className="w-3 h-3" /></span>
-                                        Multi-Vector Airflow
-                                    </h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed pl-7 font-medium">
-                                        Proprietary oscillating nozzles ensure 100% uniform exposure, guaranteeing consistent shrinkage control (&lt; 1%) across the entire width.
-                                    </p>
-                                </div>
-
-                                <div className="group">
-                                    <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2 text-lg">
-                                        <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600"><CheckCircle2 className="w-3 h-3" /></span>
-                                        AI-Driven Auto-Tension
-                                    </h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed pl-7 font-medium">
-                                        Integrated load cells feed data to the PLC, which auto-corrects tension 50 times per second for perfect, stress-free fabric handling.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* F. HEAD-TO-HEAD BATTLE (Compact Marketing Version) */}
-            <section className="py-20 bg-[#0B1121] text-white relative overflow-hidden">
-                <div className="container mx-auto px-6 max-w-5xl relative z-10">
-                    <div className="text-center mb-10">
-                        <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 block">The Clear Choice</span>
-                        <h2 className="text-3xl font-extrabold tracking-tight text-white">Why leaders switch to Cardwell</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 bg-slate-800/50 rounded-3xl border border-slate-700 overflow-hidden shadow-2xl">
-                        {/* LEFT: THE OLD WAY */}
-                        <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-slate-700 relative">
-                            <div className="absolute inset-0 bg-rose-500/5 pointer-events-none" />
-                            <h3 className="text-slate-400 font-bold uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
-                                <XCircle className="w-4 h-4" /> Standard Machinery
-                            </h3>
-                            <div className="space-y-6">
-                                <div className="flex gap-4 opacity-60 grayscale transition-all hover:grayscale-0 hover:opacity-100">
-                                    <AlertCircle className="w-6 h-6 text-rose-500 shrink-0 mt-1" />
-                                    <div>
-                                        <div className="font-bold text-slate-300">Unpredictable Shrinkage</div>
-                                        <div className="text-xs text-slate-500 mt-1">Varies 3-5% per batch</div>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4 opacity-60 grayscale transition-all hover:grayscale-0 hover:opacity-100">
-                                    <Zap className="w-6 h-6 text-rose-500 shrink-0 mt-1" />
-                                    <div>
-                                        <div className="font-bold text-slate-300">High Energy Costs</div>
-                                        <div className="text-xs text-slate-500 mt-1">Outdated heating systems</div>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4 opacity-60 grayscale transition-all hover:grayscale-0 hover:opacity-100">
-                                    <Settings className="w-6 h-6 text-rose-500 shrink-0 mt-1" />
-                                    <div>
-                                        <div className="font-bold text-slate-300">Manual Tuning</div>
-                                        <div className="text-xs text-slate-500 mt-1">Operator errors common</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* RIGHT: THE NEW WAY */}
-                        <div className="p-8 md:p-12 bg-emerald-900/10 relative">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/20 blur-[50px] -translate-y-1/2 translate-x-1/2 rounded-full pointer-events-none" />
-                            <h3 className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4" /> Cardwell Advantage
-                            </h3>
-                            <div className="space-y-6">
-                                <div className="flex gap-4">
-                                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0 mt-1">
-                                        <Scan className="w-3.5 h-3.5" />
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-white">Guaranteed &lt; 1% Shrinkage</div>
-                                        <div className="text-xs text-emerald-200/60 mt-1">Consistent every time</div>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0 mt-1">
-                                        <Activity className="w-3.5 h-3.5" />
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-white">40% Energy Savings</div>
-                                        <div className="text-xs text-emerald-200/60 mt-1">Smart heat recovery</div>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0 mt-1">
-                                        <Cpu className="w-3.5 h-3.5" />
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-white">AI Auto-Pilot</div>
-                                        <div className="text-xs text-emerald-200/60 mt-1">Zero operator dependency</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* ROI Banner */}
-                    <div className="mt-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between shadow-lg shadow-emerald-500/20">
-                        <div className="flex items-center gap-4 mb-4 md:mb-0">
-                            <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm text-white">
-                                <BarChart3 className="w-6 h-6" />
-                            </div>
-                            <div>
-                                <div className="text-xs font-bold text-emerald-100 uppercase tracking-wider">Business Impact</div>
-                                <div className="text-white font-black text-lg">Typical ROI in just 14 Months</div>
-                            </div>
-                        </div>
-                        <button className="px-6 py-2 bg-white text-emerald-700 font-bold rounded-full text-sm hover:bg-emerald-50 transition-colors shadow-sm">
-                            Calculate Your Savings
-                        </button>
-                    </div>
-                </div>
-            </section>
 
             {/* D. FAQ & SUPPORT */}
             <section className="py-24 bg-slate-50 border-t border-slate-200">
