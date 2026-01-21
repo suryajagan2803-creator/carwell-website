@@ -19,7 +19,7 @@ export type Product = {
 export const products: Product[] = [
     // FABRIC PROCESSING PRODUCTS (Sample of the 18)
     {
-        id: "tubular-fabric-reversing-machine",
+        id: "tubular-fabric-bio-wash-reversing-machine",
         name: "Tubular Fabric Reversing Machine (Bio-Wash)",
         category: "Fabric Processing",
         image: "/img/draw-frame.png",

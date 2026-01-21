@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 const fabricMachines = [
-    { slug: "tubular-fabric-reversing-machine", name: "Tubular Fabric / Bio-Wash Reversing Machine", category: "Reversing", image: "/img/draw-frame.png", desc: "Efficient reversing for tubular and bio-wash fabrics." },
+    { slug: "tubular-fabric-bio-wash-reversing-machine", name: "Tubular Fabric / Bio-Wash Reversing Machine", category: "Reversing", image: "/img/draw-frame.png", desc: "Efficient reversing for tubular and bio-wash fabrics." },
     { slug: "open-width-inspection-machine", name: "Open Width Fabric Inspection Machine", category: "Inspection", image: "/img/draw-frame.png", desc: "Standard machine for open width fabric inspection." },
     { slug: "tubular-open-width-inspection", name: "Tubular / Open Width Fabric Inspection Machine", category: "Inspection", image: "/img/speed-frame.png", desc: "Versatile inspection for both tubular and open width." },
     { slug: "tubular-fabric-inspection-machine", name: "Tubular Fabric Both Sides Inspection Machine", category: "Inspection", image: "/img/comber.png", desc: "Dual-sided inspection for thorough quality control." },
