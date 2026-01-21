@@ -74,9 +74,8 @@ export default function Hero() {
             <div className="relative z-20 container mx-auto px-12 flex flex-col items-center text-center">
 
                 {/* Headline - Massive Mode */}
-                <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-sans font-black text-white uppercase leading-[0.9] tracking-tighter mb-6 drop-shadow-xl animate-fade-in-up">
-                    <span className="block">{heroSlides[currentSlide].headline.split(' ')[0]}</span>
-                    <span className="block">{heroSlides[currentSlide].headline.split(' ').slice(1).join(' ')}</span>
+                <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-sans font-black text-white uppercase leading-[0.9] tracking-tighter mb-6 drop-shadow-xl animate-fade-in-up max-w-[90vw]">
+                    {heroSlides[currentSlide].headline}
                 </h1>
 
                 {/* Subtext */}

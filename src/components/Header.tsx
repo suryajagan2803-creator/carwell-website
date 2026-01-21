@@ -47,7 +47,7 @@ export default function Header() {
             </div>
 
             {/* Main Bar - Navigation */}
-            <div className={`bg-white transition-all duration-300 border-b border-slate-100 ${isScrolled ? 'py-2 shadow-md' : 'py-5'}`}>
+            <div className={`bg-white transition-all duration-300 border-b border-slate-100 ${isScrolled ? 'py-2 shadow-md' : 'py-3'}`}>
                 <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
 
                     {/* Logo Area */}
@@ -58,7 +58,7 @@ export default function Header() {
                             </span>
                             <span className="text-[10px] text-slate-400 font-bold">®</span>
                         </div>
-                        <span className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.2em] mt-0.5 group-hover:text-emerald-600 transition-colors">
+                        <span className="text-[11px] font-bold text-slate-600 uppercase tracking-widest mt-0.5 group-hover:text-emerald-600 transition-colors">
                             Sri Ram Textile Engineering
                         </span>
                     </Link>
