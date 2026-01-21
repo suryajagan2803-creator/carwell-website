@@ -66,9 +66,9 @@ export default function FeaturedProducts() {
     const featuredDocs = [
         'woven-fabric-inspection',
         'fabric-pallet-folding',
+        'fabric-meter-folding',
         'tubular-fabric-bio-wash-reversing-machine',
-        'open-width-inspection-machine',
-        'automatic-roll-packing-machine'
+        'open-width-inspection-machine'
     ];
 
     const featuredItems = products.filter(p => featuredDocs.includes(p.id));
