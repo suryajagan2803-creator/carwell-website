@@ -20,12 +20,11 @@ export default function Home() {
     <main className="min-h-screen font-sans">
       <Header />
       <Hero />
-      <About />
-      <FeaturedProducts />
       <TrustSection />
+      <FeaturedProducts />
+      <CategorySection />
       <LatestProjects />
       <Testimonials />
-      <CategorySection />
       <Services />
       <Innovation />
       <GlobalReach />
