@@ -306,7 +306,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                             <div className="space-y-8">
 
                                 {/* 1. VISUAL COMPARISON CARD */}
-                                <div className="bg-slate-900 rounded-3xl p-1 overflow-hidden shadow-2xl">
+                                <div className="bg-slate-900 rounded-3xl p-1 overflow-hidden shadow-2xl hidden">
                                     <div className="relative h-64 md:h-80 bg-slate-800 rounded-[20px] overflow-hidden group">
                                         {/* Split View */}
                                         <div className="absolute inset-y-0 left-0 w-1/2 bg-slate-800 border-r border-slate-700/50 flex flex-col justify-center items-center text-center p-6">
