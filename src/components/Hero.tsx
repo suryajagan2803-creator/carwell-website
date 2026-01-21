@@ -24,58 +24,59 @@ export default function Hero() {
 
             <div className="container mx-auto px-6 md:px-12 relative z-20 h-full flex items-center">
 
-                {/* Floating "Glass" Content Card for Premium Feel */}
-                <div className="max-w-2xl bg-white/40 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/60 shadow-2xl animate-fade-slide-in">
+                {/* Floating "Solid" Content Card for Clearer, Bolder Look */}
+                <div className="max-w-xl bg-white p-10 md:p-14 rounded-2xl shadow-2xl animate-fade-slide-in border-l-8 border-emerald-600">
 
-                    {/* Heritage Badge */}
-                    <div className="inline-flex items-center gap-3 mb-6 bg-amber-50 border border-amber-100 px-4 py-1.5 rounded-full">
-                        <Star className="w-4 h-4 text-amber-600 fill-current" />
-                        <span className="text-xs font-bold text-amber-800 tracking-widest uppercase font-serif">
-                            Est. 1984 • Excellence in Engineering
+                    {/* Bold Badge */}
+                    <div className="inline-flex items-center gap-2 mb-8">
+                        <span className="px-3 py-1 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-[0.2em]">
+                            Since 1984
+                        </span>
+                        <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-[0.2em]">
+                            Global Leader
                         </span>
                     </div>
 
-                    {/* Headline - Serif for Classical Authority */}
-                    <h1 className="text-5xl md:text-7xl font-serif font-medium text-slate-900 leading-[1.05] mb-6 tracking-tight">
-                        Mastering the Art of <br />
-                        <span className="text-emerald-800 italic pr-2">Fabric Perfection</span>
+                    {/* Headline - Strong, Bold, Clear */}
+                    <h1 className="text-5xl md:text-6xl font-black text-slate-900 leading-tight mb-6 tracking-tight">
+                        THE GOLD STANDARD IN
+                        <span className="text-emerald-700 block">TEXTILE ENGINEERING</span>
                     </h1>
 
-                    {/* Description - Human & Engaging */}
-                    <p className="text-lg text-slate-700 font-medium leading-relaxed mb-8 max-w-lg">
-                        We craft the world's most reliable textile processing machinery.
-                        Simple to operate, built to last, and engineered for pure performance.
+                    {/* Description - Direct & Confident */}
+                    <p className="text-lg text-slate-600 font-medium leading-relaxed mb-10 border-l-2 border-slate-200 pl-6">
+                        We engineer the machines that power the world's finest fabric mills. Precision, durability, and innovation in every component.
                     </p>
 
-                    {/* Buttons - Tactile & Clear */}
-                    <div className="flex flex-wrap items-center gap-5">
+                    {/* Buttons - High Contrast */}
+                    <div className="flex flex-col sm:flex-row gap-4">
                         <Link
                             href="/products"
-                            className="group relative px-8 py-4 bg-slate-900 text-white font-bold text-sm uppercase tracking-wider rounded shadow-xl hover:bg-emerald-800 transition-all overflow-hidden"
+                            className="inline-flex justify-center items-center px-8 py-4 bg-emerald-700 text-white font-black text-sm uppercase tracking-widest hover:bg-emerald-800 transition-all shadow-lg hover:shadow-emerald-500/30"
                         >
-                            <span className="relative z-10 flex items-center gap-2">
-                                View Collection <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </span>
+                            Explore Machines
                         </Link>
-
                         <Link
                             href="/contact"
-                            className="px-8 py-4 bg-white text-slate-900 font-bold text-sm uppercase tracking-wider rounded border border-slate-300 hover:border-slate-900 hover:bg-slate-50 transition-all shadow-sm"
+                            className="inline-flex justify-center items-center px-8 py-4 bg-slate-900 text-white font-black text-sm uppercase tracking-widest hover:bg-slate-800 transition-all"
                         >
-                            Talk to an Expert
+                            Get A Quote
                         </Link>
                     </div>
 
-                    {/* Trust Signals Divider */}
-                    <div className="mt-10 pt-6 border-t border-slate-900/10 flex items-center gap-8">
-                        <div className="flex flex-col">
-                            <span className="text-2xl font-serif font-bold text-slate-900">30+</span>
-                            <span className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Countries Exported</span>
+                    {/* Stats - Tech Focused */}
+                    <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-3 gap-4">
+                        <div>
+                            <div className="text-3xl font-black text-slate-900">12+</div>
+                            <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">States Covered</div>
                         </div>
-                        <div className="w-px h-8 bg-slate-900/10"></div>
-                        <div className="flex flex-col">
-                            <span className="text-2xl font-serif font-bold text-slate-900">40<span className="text-sm align-top ml-0.5">Yrs</span></span>
-                            <span className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Of Heritage</span>
+                        <div>
+                            <div className="text-3xl font-black text-slate-900">2.5k</div>
+                            <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Installations</div>
+                        </div>
+                        <div>
+                            <div className="text-3xl font-black text-slate-900">100%</div>
+                            <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">R&D In-House</div>
                         </div>
                     </div>
 
