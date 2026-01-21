@@ -194,9 +194,21 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                                     <div className="bg-slate-900 text-white p-4 font-bold text-sm uppercase tracking-wider text-center">Machine Variants</div>
                                     <div className="divide-y divide-slate-100">
                                         {product.variants.map((v, i) => (
-                                            <div key={i} className="p-4 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-slate-50 transition-colors">
-                                                <span className="font-bold text-emerald-700 text-sm whitespace-nowrap">{v.model}</span>
-                                                <span className="text-sm text-slate-600 text-right sm:text-left">{v.description}</span>
+                                            <div key={i} className="p-4 bg-white flex flex-col gap-2 hover:bg-slate-50 transition-colors">
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                                    <span className="font-bold text-emerald-700 text-sm whitespace-nowrap">{v.model}</span>
+                                                    <span className="text-xs text-slate-500 font-bold uppercase">{v.description}</span>
+                                                </div>
+                                                {v.items && (
+                                                    <ul className="pl-4 mt-2 space-y-1 border-l-2 border-emerald-100">
+                                                        {v.items.map((item, j) => (
+                                                            <li key={j} className="text-xs text-slate-600 leading-relaxed pl-2 relative">
+                                                                <span className="absolute left-[-17px] top-1.5 w-1 h-1 rounded-full bg-emerald-400"></span>
+                                                                {item}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
                                             </div>
                                         ))}
                                     </div>

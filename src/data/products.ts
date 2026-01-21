@@ -17,7 +17,7 @@ export type Product = {
     // New rich content fields
     tagline?: string;
     introBullets?: string[];
-    variants?: { model: string; description: string }[];
+    variants?: { model: string; description: string; items?: string[] }[];
     advancedFeatures?: { title: string; subtitle?: string; description: string; items?: string[] }[];
     whyChooseUs?: string[];
     cardwellDifference?: { advantage: string; benefit: string }[];
@@ -380,59 +380,83 @@ export const products: Product[] = [
         category: "Fabric Folding",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        tagline: "High-Speed Fabric Folding. Precision Control. Export-Ready Output.",
-        description: "The Pallet Folding Machine is designed for accurate, uniform, and high-speed folding of woven fabrics directly into pallets. Built with servo-driven motion and PLC control, this machine ensures consistent folding quality while significantly reducing manual handling and labor dependency.",
+        tagline: "Servo Driven | PLC Controlled | Export-Ready Folding",
+        description: "The Pallet Folding Machine is engineered for high-precision folding of woven fabrics into uniform pallets. With multiple variants, this machine allows textile manufacturers to select the right level of automation based on production volume, quality requirement, and investment plan.",
         introBullets: [
-            "Produces perfectly aligned fabric pallets",
-            "Suitable for export-oriented fabric units",
-            "Reduces manpower and folding errors",
-            "Ensures uniform fabric presentation & packing"
+            "Produces uniform, export-quality fabric pallets",
+            "Reduces manual folding and labor dependency",
+            "Ensures consistent fabric presentation",
+            "Improves packing efficiency and storage handling"
         ],
         highlights: ["Servo Driven", "PLC Controlled", "High Precision", "Export Quality"],
         specs: [
-            { label: "Machine Type", value: "Pallet Folding Machine" },
-            { label: "Fabric Type", value: "Woven fabric" },
+            { label: "Fabric Type", value: "Woven fabrics" },
             { label: "Folding Type", value: "Pallet folding" },
-            { label: "Drive Mechanism", value: "Servo driven" },
-            { label: "Control", value: "PLC control system" },
-            { label: "Folding Accuracy", value: "High precision" },
-            { label: "Production Mode", value: "Continuous" },
+            { label: "Control System", value: "PLC controlled" },
+            { label: "Drive System", value: "Servo driven (variant-based)" },
+            { label: "Pallet Size", value: "Fixed / Adjustable (variant-based)" },
+            { label: "Operating Mode", value: "Semi / Fully automatic" },
+            { label: "Upgrade Capability", value: "Yes" },
+        ],
+        variants: [
+            {
+                model: "Standard Model",
+                description: "Best suited for: Small to mid-scale production",
+                items: ["PLC controlled operation", "Semi-automatic pallet folding", "Fixed pallet size", "Reliable and cost-effective solution"]
+            },
+            {
+                model: "Servo Model",
+                description: "Best suited for: High-accuracy folding requirements",
+                items: ["Servo-driven folding system", "PLC with touch panel control", "Adjustable pallet dimensions", "Higher folding precision and speed"]
+            },
+            {
+                model: "High-Speed Servo Model",
+                description: "Best suited for: Large-scale & export-oriented units",
+                items: ["Multiple servo drives", "High-speed synchronized folding", "Automatic pallet positioning", "Continuous, high-output operation"]
+            }
         ],
         features: [
-            { title: "Precision Folding", description: "Servo-driven folding for precise fabric placement.", icon: "Minimize" },
-            { title: "Reliability", description: "PLC-controlled operation for repeatability & reliability.", icon: "ShieldCheck" },
-            { title: "Gentle Handling", description: "Smooth fabric movement without tension damage.", icon: "Activity" },
-            { title: "Durability", description: "Heavy-duty structure for long working hours.", icon: "Shield" },
+            { title: "Precision Folding", description: "Servo & PLC controlled precision folding.", icon: "Minimize" },
+            { title: "Fabric Handling", description: "Smooth fabric handling without distortion.", icon: "Activity" },
+            { title: "Consistency", description: "Consistent pallet formation.", icon: "Layers" },
+            { title: "Structure", description: "Heavy-duty mechanical structure.", icon: "Shield" },
+            { title: "Usage", description: "Operator-friendly interface.", icon: "User" },
         ],
         advancedFeatures: [
             {
-                title: "Advanced Capabilities",
-                description: "High-speed synchronized folding cycles.",
-                items: ["Uniform pallet height and alignment", "Reduced fabric edge distortion", "Ideal for integration with inspection & packing lines"]
+                title: "Advanced & Optional Features",
+                description: "Enhance your line with these capabilities.",
+                items: [
+                    "Edge alignment system",
+                    "Automatic pallet loading & unloading",
+                    "Production counter & monitoring",
+                    "Integration with inspection & packing lines",
+                    "Safety interlocks and emergency stop systems"
+                ]
             }
         ],
         whyChooseUs: [
-            "Machines engineered for real shop-floor conditions",
-            "Focus on reliability, accuracy, and serviceability",
-            "Modular integration with upstream & downstream machines",
-            "Transparent pricing and long-term support"
+            "Proven expertise in textile machinery solutions",
+            "Machines designed for continuous industrial use",
+            "Custom configurations based on customer workflow",
+            "Reliable after-sales support"
         ],
         cardwellDifference: [
-            { advantage: "Servo + PLC technology", benefit: "Higher accuracy & control" },
-            { advantage: "Robust mechanical design", benefit: "Long machine life" },
-            { advantage: "Consistent pallet output", benefit: "Better packing & export quality" },
-            { advantage: "Low maintenance design", benefit: "Reduced operating cost" }
+            { advantage: "Multiple machine variants", benefit: "Right investment for every scale" },
+            { advantage: "Servo-driven precision", benefit: "Consistent folding accuracy" },
+            { advantage: "Modular automation", benefit: "Easy future upgrades" },
+            { advantage: "Robust build quality", benefit: "Long service life" }
         ],
         roi: {
-            benefits: ["Faster pallet preparation", "Reduced manual folding labor", "Improved packing efficiency", "Lower fabric handling damage"],
-            highlights: ["Faster turnaround time", "Reduced manpower cost", "Improved consistency for bulk orders"],
-            period: "12–18 months (depending on volume)"
+            benefits: ["Reduced manpower cost", "Faster folding cycles", "Improved packing consistency", "Lower fabric handling losses"],
+            highlights: ["Faster payback through labor savings", "Increased throughput for bulk orders", "Improved customer acceptance for export consignments"],
+            period: "12–18 months (based on production volume)"
         },
         industries: [
-            "Textile Mills",
-            "Fabric Processing Units",
-            "Export Fabric Manufacturers",
-            "Warehousing & Packing Units"
+            "Textile mills",
+            "Fabric processing units",
+            "Garment export houses",
+            "Fabric warehousing & packing units"
         ],
         comparison: [
             { feature: "Folding Accuracy", cardwell: "High (Servo)", market: "Avg (Mechanical)", advantage: true },
