@@ -9,7 +9,7 @@ function FeaturedCard({ product }: { product: any }) {
     return (
         <Link
             href={`/product/${product.id}`}
-            className="group relative h-[380px] bg-white border border-slate-200 hover:border-emerald-500 transition-all duration-300 flex flex-col hover:shadow-lg hover:shadow-emerald-500/10"
+            className="group relative h-[320px] bg-white border border-slate-200 hover:border-emerald-500 transition-all duration-300 flex flex-col hover:shadow-lg hover:shadow-emerald-500/10"
         >
             {/* Media Area */}
             <div className="relative w-full h-48 bg-slate-100 overflow-hidden shrink-0 border-b border-slate-100">
@@ -74,17 +74,17 @@ export default function FeaturedProducts() {
     const featuredItems = products.filter(p => featuredDocs.includes(p.id));
 
     return (
-        <section className="py-32 bg-white relative overflow-hidden">
+        <section className="py-16 bg-white relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-50/40 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
             <div className="container mx-auto px-6 md:px-8 relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-8">
                     <div className="animate-fade-up">
                         <span className="text-emerald-600 font-bold text-xs uppercase tracking-widest block mb-4 bg-emerald-50 inline-block px-3 py-1 rounded-full border border-emerald-100">
                             Innovation Hub
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
                             Engineered for <br />
                             <span className="text-emerald-500">Textile Excellence</span>
                         </h2>
@@ -97,7 +97,7 @@ export default function FeaturedProducts() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
                     {featuredItems.map((product, index) => (
                         <FeaturedCard key={index} product={product} />
                     ))}

@@ -35,17 +35,17 @@ const services = [
 
 export default function Services() {
     return (
-        <section id="services" className="py-24 bg-[#F8FAFC] relative overflow-hidden">
+        <section id="services" className="py-16 bg-[#F8FAFC] relative overflow-hidden">
             {/* Soft Gradient Background */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-50/50 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
             <div className="container mx-auto px-6 md:px-8 relative z-10">
-                <div className="text-center mb-16 max-w-2xl mx-auto animate-fade-slide-in">
+                <div className="text-center mb-10 max-w-2xl mx-auto animate-fade-slide-in">
                     <span className="inline-block py-1 px-3 rounded-full bg-emerald-100/50 text-emerald-700 font-bold text-xs tracking-widest uppercase mb-4 border border-emerald-100">
                         Our Expertise
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
                         Comprehensive Solutions for <span className="text-emerald-500">Modern Mills</span>
                     </h2>
                     <p className="text-slate-600 text-lg leading-relaxed">
@@ -53,10 +53,10 @@ export default function Services() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {services.map((service, index) => (
-                        <div key={index} className="group relative bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-500 hover:-translate-y-2">
-                            <div className="mb-8 w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                        <div key={index} className="group relative bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-500 hover:-translate-y-2">
+                            <div className="mb-4 w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
                                 {service.icon}
                             </div>
 

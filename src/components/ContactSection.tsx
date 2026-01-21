@@ -19,7 +19,7 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="contact" className="py-32 bg-[#F8FAFC] relative overflow-hidden">
+        <section id="contact" className="py-16 bg-[#F8FAFC] relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-100/40 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-100/50 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/3 pointer-events-none" />
@@ -30,7 +30,7 @@ export default function ContactSection() {
             <div className="container mx-auto px-6 md:px-8 relative z-10">
                 <div className="bg-white/80 backdrop-blur-xl rounded-[3rem] p-8 md:p-16 shadow-2xl shadow-slate-200/50 border border-white/50 relative overflow-hidden">
 
-                    <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative z-10">
+                    <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 relative z-10">
                         {/* Contact Info & Context */}
                         <div className="lg:w-5/12 pt-8">
                             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-widest mb-8">
@@ -38,17 +38,17 @@ export default function ContactSection() {
                                 <span>Global Support Online</span>
                             </span>
 
-                            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
                                 Ready to Optimize <br />
                                 <span className="text-emerald-500">Your Production?</span>
                             </h2>
 
-                            <p className="text-slate-500 text-lg leading-relaxed mb-12 font-medium">
+                            <p className="text-slate-500 text-lg leading-relaxed mb-8 font-medium">
                                 Our team of Textile Automation Engineers is ready to discuss your specific requirements. Whether you need a Custom Machine Consultation or a full Textile Plant Audit.
                             </p>
 
-                            <div className="space-y-8">
-                                <div className="flex items-center gap-6 p-4 rounded-2xl transition-all group hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100">
+                            <div className="space-y-6">
+                                <div className="flex items-center gap-6 p-3 rounded-2xl transition-all group hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100">
                                     <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm">
                                         <Phone className="w-6 h-6" />
                                     </div>
@@ -60,7 +60,7 @@ export default function ContactSection() {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-6 p-4 rounded-2xl transition-all group hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100">
+                                <div className="flex items-center gap-6 p-3 rounded-2xl transition-all group hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100">
                                     <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm">
                                         <Mail className="w-6 h-6" />
                                     </div>
@@ -72,7 +72,7 @@ export default function ContactSection() {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-6 p-4 rounded-2xl transition-all group hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100">
+                                <div className="flex items-center gap-6 p-3 rounded-2xl transition-all group hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100">
                                     <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm">
                                         <MapPin className="w-6 h-6" />
                                     </div>
@@ -83,6 +83,19 @@ export default function ContactSection() {
                                         </p>
                                     </div>
                                 </div>
+                            </div>
+
+                            {/* Map Integration */}
+                            <div className="mt-8 rounded-3xl overflow-hidden border border-slate-100 shadow-lg">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.44143491953!2d76.8848328678255!3d11.014261494510007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c565f9b63266!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                    width="100%"
+                                    height="200"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                />
                             </div>
                         </div>
 

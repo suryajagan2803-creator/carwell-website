@@ -4,16 +4,16 @@ import { ArrowRight, Layers, Settings } from 'lucide-react';
 
 export default function CategorySection() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden border-b border-slate-200">
+        <section className="py-16 bg-white relative overflow-hidden border-b border-slate-200">
 
             <div className="container mx-auto px-6 md:px-8 max-w-7xl relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12 animate-fade-slide-in">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-8 animate-fade-slide-in">
                     <div>
                         <div className="flex items-center gap-2 mb-3">
                             <span className="w-6 h-[2px] bg-emerald-600"></span>
                             <span className="text-emerald-700 font-bold uppercase tracking-widest text-xs">Divisions</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight uppercase tracking-tight">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight uppercase tracking-tight">
                             Product Categories
                         </h2>
                     </div>
@@ -22,7 +22,7 @@ export default function CategorySection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                     {/* Fabric Processing */}
-                    <Link href="/fabric-processing" className="group relative h-[380px] overflow-hidden cursor-pointer border border-slate-200 hover:border-emerald-500 transition-colors duration-300">
+                    <Link href="/fabric-processing" className="group relative h-[300px] overflow-hidden cursor-pointer border border-slate-200 hover:border-emerald-500 transition-colors duration-300">
                         <Image
                             src="/img/speed-frame.png"
                             alt="Fabric Processing Machines"
@@ -40,7 +40,7 @@ export default function CategorySection() {
                                 <span className="text-white font-mono text-[10px] tracking-widest uppercase">Division 01</span>
                             </div>
 
-                            <h3 className="text-2xl md:text-3xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-emerald-400 transition-colors">
+                            <h3 className="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-emerald-400 transition-colors">
                                 Fabric Processing
                             </h3>
                             <p className="text-slate-300 text-sm max-w-sm leading-relaxed mb-6 font-medium border-l-2 border-emerald-500 pl-4">
@@ -54,7 +54,7 @@ export default function CategorySection() {
                     </Link>
 
                     {/* Spinning Accessories */}
-                    <Link href="/spinning-accessories" className="group relative h-[380px] overflow-hidden cursor-pointer border border-slate-200 hover:border-emerald-500 transition-colors duration-300">
+                    <Link href="/spinning-accessories" className="group relative h-[300px] overflow-hidden cursor-pointer border border-slate-200 hover:border-emerald-500 transition-colors duration-300">
                         <Image
                             src="/img/apron-doffing.png"
                             alt="Spinning Accessories"
@@ -72,7 +72,7 @@ export default function CategorySection() {
                                 <span className="text-white font-mono text-[10px] tracking-widest uppercase">Division 02</span>
                             </div>
 
-                            <h3 className="text-2xl md:text-3xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-emerald-400 transition-colors">
+                            <h3 className="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-emerald-400 transition-colors">
                                 Spinning Accessories
                             </h3>
                             <p className="text-slate-300 text-sm max-w-sm leading-relaxed mb-6 font-medium border-l-2 border-emerald-500 pl-4">

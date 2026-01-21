@@ -3,23 +3,23 @@ import { Globe, Plane, Award, MapPin } from 'lucide-react';
 
 export default function GlobalReach() {
     return (
-        <section className="py-32 bg-[#F8FAFC] relative overflow-hidden">
+        <section className="py-16 bg-[#F8FAFC] relative overflow-hidden">
             {/* Background Map Placeholder (Soft Dots) */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[80%] bg-[radial-gradient(circle,rgba(16,185,129,0.3)_1px,transparent_1px)] bg-[size:24px_24px]" />
             </div>
 
             <div className="container mx-auto px-6 md:px-8 relative z-10">
-                <div className="flex flex-col md:flex-row gap-16 items-center">
+                <div className="flex flex-col md:flex-row gap-10 items-center">
 
                     <div className="md:w-1/2 animate-fade-slide-in">
                         <span className="inline-block py-1 px-3 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold text-xs tracking-widest uppercase mb-6">
                             National Operations
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
                             Trusted <br /><span className="text-emerald-500">Across India</span>
                         </h2>
-                        <p className="text-slate-600 text-lg font-medium leading-relaxed mb-10">
+                        <p className="text-slate-600 text-lg font-medium leading-relaxed mb-6">
                             Our machinery powers textile production lines in major hubs across the nation. From the knitwear capital of Tirupur to the textile centers of Gujarat and Maharashtra, Cardwell engineering delivers consistent performance.
                         </p>
 
@@ -30,11 +30,11 @@ export default function GlobalReach() {
                                 { label: "Service Network", value: "Pan-India", icon: Plane },
                                 { label: "Support Centers", value: "24/7", icon: MapPin },
                             ].map((stat, i) => (
-                                <div key={i} className="bg-white border border-slate-100 p-6 rounded-[1.5rem] hover:border-emerald-200 transition-all hover:shadow-lg hover:shadow-emerald-500/10 group">
+                                <div key={i} className="bg-white border border-slate-100 p-4 rounded-[1.5rem] hover:border-emerald-200 transition-all hover:shadow-lg hover:shadow-emerald-500/10 group">
                                     <div className="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 mb-4 group-hover:scale-110 transition-transform">
                                         <stat.icon className="w-5 h-5" />
                                     </div>
-                                    <div className="text-3xl font-extrabold text-slate-900 mb-1">{stat.value}</div>
+                                    <div className="text-2xl font-extrabold text-slate-900 mb-1">{stat.value}</div>
                                     <div className="text-xs text-slate-500 font-bold uppercase tracking-wider">{stat.label}</div>
                                 </div>
                             ))}

@@ -58,7 +58,7 @@ export default function Header() {
                             </span>
                             <span className="text-[10px] text-slate-400 font-bold">®</span>
                         </div>
-                        <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest mt-0.5 group-hover:text-emerald-600 transition-colors">
+                        <span className="text-xs font-bold text-slate-600 uppercase tracking-widest mt-0.5 group-hover:text-emerald-600 transition-colors">
                             Sri Ram Textile Engineering
                         </span>
                     </Link>
@@ -82,12 +82,12 @@ export default function Header() {
                             <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 min-w-[260px]">
                                 <div className="bg-white rounded-lg shadow-xl border border-slate-100 overflow-hidden p-2 ring-1 ring-slate-900/5">
                                     <Link href="/fabric-processing" className="block px-4 py-3 rounded-md hover:bg-slate-50 group/item">
-                                        <div className="text-sm font-bold text-slate-900 group-hover/item:text-emerald-600">Fabric Processing</div>
-                                        <div className="text-[10px] text-slate-500 font-medium">Inspection, Finishing, Packing</div>
+                                        <div className="text-xs font-bold text-slate-900 group-hover/item:text-emerald-600">Fabric Processing</div>
+                                        <div className="text-[9px] text-slate-500 font-medium">Inspection, Finishing, Packing</div>
                                     </Link>
                                     <Link href="/spinning-accessories" className="block px-4 py-3 rounded-md hover:bg-slate-50 group/item">
-                                        <div className="text-sm font-bold text-slate-900 group-hover/item:text-emerald-600">Spinning Accessories</div>
-                                        <div className="text-[10px] text-slate-500 font-medium">Apron Doffing, Spares</div>
+                                        <div className="text-xs font-bold text-slate-900 group-hover/item:text-emerald-600">Spinning Accessories</div>
+                                        <div className="text-[9px] text-slate-500 font-medium">Apron Doffing, Spares</div>
                                     </Link>
                                 </div>
                             </div>
@@ -103,14 +103,6 @@ export default function Header() {
 
                     {/* Right Icons Actions */}
                     <div className="flex items-center gap-6 text-slate-800">
-                        <div className="hidden md:flex items-center gap-5">
-                            <Search className="w-5 h-5 hover:text-emerald-600 cursor-pointer transition-colors" />
-                            <div className="relative group cursor-pointer">
-                                <ShoppingCart className="w-5 h-5 hover:text-emerald-600 transition-colors" />
-                                <span className="absolute -top-1.5 -right-1.5 bg-emerald-600 text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">0</span>
-                            </div>
-                        </div>
-
                         {/* Mobile Hamburger */}
                         <button
                             className="xl:hidden text-slate-900 hover:text-emerald-600 transition-colors"
@@ -118,9 +110,6 @@ export default function Header() {
                         >
                             {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
                         </button>
-
-                        {/* Desktop Menu Icon */}
-                        <Menu className="w-6 h-6 hover:text-emerald-600 cursor-pointer transition-colors hidden xl:block" />
                     </div>
                 </div>
             </div>
