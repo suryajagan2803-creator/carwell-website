@@ -2,100 +2,92 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Play, Activity } from 'lucide-react';
+import { ArrowRight, Play, Crown, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
     return (
-        <section className="relative h-[600px] w-full flex items-center overflow-hidden bg-slate-900 border-b-4 border-emerald-600">
+        <section className="relative h-[700px] w-full flex items-center overflow-hidden bg-[#0F1014] border-b border-slate-800">
 
-            {/* 1. Full Background Image (Dark Gradient Theme) */}
-            <div className="absolute inset-0 w-full h-full z-0">
+            {/* Background Effects */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                {/* Blurred subtle industrial mech */}
                 <Image
                     src="/img/hero_industrial_daylight.png"
-                    alt="Advanced Textile Machinery"
+                    alt="Background"
                     fill
-                    className="object-cover"
-                    priority
+                    className="object-cover opacity-10 blur-2xl grayscale"
                 />
-                {/* Dark Gradient Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+                {/* Radial Spotlight */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(56,189,248,0.1),transparent_50%)]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0F1014] via-[#0F1014]/90 to-transparent" />
             </div>
 
-            {/* Content Container (Immersive Floating Layout) */}
-            <div className="container mx-auto px-6 md:px-8 relative z-20 h-full flex items-center">
-                <div className="max-w-3xl animate-fade-slide-in pt-12">
+            <div className="container mx-auto px-6 md:px-12 relative z-20 h-full">
+                <div className="grid grid-cols-1 lg:grid-cols-12 h-full items-center gap-12">
 
-                    {/* Badge */}
-                    <div className="inline-flex items-center gap-2 mb-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full pr-4 pl-1 py-1">
-                        <span className="flex h-6 w-6 relative">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-6 w-6 bg-emerald-500 border-2 border-slate-900"></span>
-                        </span>
-                        <span className="text-[10px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
-                            Series 2026
-                        </span>
+                    {/* LEFT: TEXT CONTENT */}
+                    <div className="lg:col-span-7 flex flex-col justify-center animate-fade-slide-in pt-12 lg:pt-0">
+
+                        {/* Top Label (Reference: OBJECT RENDER | TRANSPARENT...) */}
+                        <div className="flex flex-wrap items-center gap-3 md:gap-6 text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-500 mb-8 uppercase">
+                            <span className="flex items-center gap-2 text-slate-300">
+                                <Crown className="w-4 h-4 text-amber-500 fill-current" /> CARDWELL SERIES
+                            </span>
+                            <span className="hidden md:block h-3 w-px bg-slate-700"></span>
+                            <span className="text-slate-500">PRECISION MFG</span>
+                            <span className="hidden md:block h-3 w-px bg-slate-700"></span>
+                            <span className="text-slate-500">ISO 9001:2015</span>
+                        </div>
+
+                        {/* HEADLINE (Reference: 3D RENDERING...) */}
+                        <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tight mb-6">
+                            TEXTILE <br />
+                            ENGINEERING
+                        </h1>
+                        <h2 className="text-xl md:text-3xl font-light text-slate-400 tracking-[0.2em] uppercase mb-10">
+                            AUTOMATION SYSTEMS
+                        </h2>
+
+                        {/* Description */}
+                        <div className="relative mb-12">
+                            <p className="text-xs md:text-sm text-slate-400 max-w-lg leading-relaxed uppercase tracking-wider font-medium">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <span className="block mt-2 text-slate-300">High-speed robotic yarn conditioning.</span>
+                            </p>
+                        </div>
+
+                        {/* Buttons (Reference: CONFIRM / CANCEL) */}
+                        <div className="flex items-center gap-6">
+                            <Link href="/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] rounded shadow-[0_20px_40px_rgba(37,99,235,0.4)] transition-all hover:-translate-y-1 hover:shadow-blue-500/50">
+                                GET QUOTE
+                            </Link>
+                            <Link href="/products" className="px-10 py-4 bg-white/5 hover:bg-white/10 text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] rounded border border-white/10 backdrop-blur-sm transition-all hover:border-white/30">
+                                VIEW CATALOG
+                            </Link>
+                        </div>
+
                     </div>
 
-                    {/* Headline */}
-                    <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight uppercase mb-6 drop-shadow-2xl">
-                        Engineered <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600 filter drop-shadow-lg">
-                            Precision
-                        </span>
-                    </h1>
+                    {/* RIGHT: 3D OBJECT (Reference: Gears) */}
+                    <div className="lg:col-span-5 relative h-[50vh] lg:h-full flex items-center justify-center pointer-events-none">
+                        {/* Glowing Orb Behind */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-blue-500/10 rounded-full blur-[120px] animate-pulse"></div>
 
-                    {/* Description */}
-                    <p className="text-base md:text-xl text-slate-300 font-medium leading-relaxed mb-10 max-w-2xl text-shadow-sm">
-                        Cardwell powers the world's leading textile mills with automated Acid Treatment & Yarn Conditioning systems.
-                        <span className="block mt-2 text-white font-bold">
-                            Zero downtime. Maximum efficiency.
-                        </span>
-                    </p>
+                        {/* The Gear/Machine Image */}
+                        <div className="relative w-full aspect-square max-w-[600px] flex items-center justify-center">
+                            <Image
+                                src="/img/gears.png"
+                                alt="3D Gears"
+                                width={800}
+                                height={800}
+                                className="object-contain drop-shadow-2xl relative z-10"
+                            />
 
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <Link
-                            href="/products"
-                            className="inline-flex items-center justify-center gap-3 bg-emerald-600 text-white px-8 py-4 font-bold text-sm uppercase tracking-widest hover:bg-emerald-500 transition-all shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] rounded-full group"
-                        >
-                            View Machinery
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-
-                        <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-sm text-white border border-white/20 font-bold text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white/40 transition-all rounded-full">
-                            <Play className="w-4 h-4 fill-white" />
-                            Live Demo
-                        </button>
-                    </div>
-
-                    {/* Quick Stats (Integrated into layout) */}
-                    <div className="flex gap-12 mt-12 border-t border-slate-800/50 pt-8">
-                        <div>
-                            <div className="text-3xl font-black text-white">40+</div>
-                            <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mt-1">Years Excellence</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-black text-white">500+</div>
-                            <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mt-1">Units Deployed</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-black text-white">Global</div>
-                            <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mt-1">Service Network</div>
+                            {/* Highlight Flare */}
+                            <div className="absolute top-1/4 right-1/4 w-24 h-24 bg-white/80 blur-[60px] rounded-full mix-blend-overlay z-20"></div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* Right Side Tech Highlights (Floating, No Overlay) */}
-            <div className="absolute right-8 bottom-8 z-20 hidden lg:flex flex-col gap-4 items-end pointer-events-none">
-                <div className="bg-white/90 backdrop-blur border-l-4 border-emerald-500 p-3 shadow-xl">
-                    <div className="flex items-center gap-3">
-                        <Activity className="w-5 h-5 text-emerald-600" />
-                        <div>
-                            <div className="text-[9px] uppercase font-bold text-slate-500">System Efficiency</div>
-                            <div className="text-xl font-black text-slate-900">99.8%</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
