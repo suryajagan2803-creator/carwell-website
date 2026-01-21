@@ -14,6 +14,15 @@ export type Product = {
         advantage: boolean;
     }[];
     video?: string;
+    // New rich content fields
+    tagline?: string;
+    introBullets?: string[];
+    variants?: { model: string; description: string }[];
+    advancedFeatures?: { title: string; subtitle?: string; description: string; items?: string[] }[];
+    whyChooseUs?: string[];
+    cardwellDifference?: { advantage: string; benefit: string }[];
+    roi?: { benefits: string[]; highlights: string[]; period: string };
+    industries?: string[];
 };
 
 export const products: Product[] = [
@@ -203,20 +212,88 @@ export const products: Product[] = [
         category: "Fabric Inspection",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        description: "Engineered to deliver accurate defect detection, smooth fabric handling, and scalable automation for modern textile units. Designed with modular optional systems, allows manufacturers to start lean and scale seamlessly as production grows. Ensures consistent fabric quality through precision roll-to-roll inspection.",
+        tagline: "Precision Inspection. Modular Automation. Higher Fabric Quality.",
+        description: "Our Woven Fabric Inspection Machine (Roll-to-Roll) is engineered to deliver accurate defect detection, smooth fabric handling, and scalable automation for modern textile units. Designed with modular optional systems, this machine allows manufacturers to start lean and scale seamlessly as production grows.",
+        introBullets: [
+            "Ensures consistent fabric quality through roll-to-roll inspection",
+            "Reduces rejections, rework, and downstream losses",
+            "Modular design supports automation upgrades without replacing the base machine",
+            "Suitable for small units to large-scale processing plants"
+        ],
         highlights: ["Precision Inspection", "Modular Automation", "Scalable Design", "Industry 4.0 Ready"],
         specs: [
             { label: "Inspection Type", value: "Roll-to-Roll" },
-            { label: "Fabric Type", value: "Woven Fabrics" },
-            { label: "Operation Mode", value: "Manual / Semi-Auto / Auto" },
-            { label: "Roll Handling", value: "Forward & Reverse" },
-            { label: "Upgrade Capability", value: "Fully Modular" },
+            { label: "Fabric Type", value: "Woven fabrics" },
+            { label: "Operation Mode", value: "Manual / Semi-Automatic / Automatic (Model based)" },
+            { label: "Roll Handling", value: "Forward & reverse inspection" },
+            { label: "Power Supply", value: "Industrial standard" },
+            { label: "Upgrade Capability", value: "Fully modular" },
+            { label: "Optional Automation", value: "Yes" },
+        ],
+        variants: [
+            { model: "ECO Model", description: "Cost-effective inspection solution for basic quality control" },
+            { model: "Standard Model", description: "Balanced performance with enhanced operational flexibility" },
+            { model: "Auto Draft Model", description: "Advanced inspection with higher automation & productivity" },
         ],
         features: [
-            { title: "Cleaning System", description: "Integrated brushing unit with 3 HP dust collection filter box removes lint/dust.", icon: "Sparkles" },
-            { title: "Auto Feed System", description: "Power unwinder with reserve roll table and auto-lifting mechanism reduces manual labor.", icon: "Wind" },
-            { title: "Data Management", description: "Digital weighing cradle with Ethernet connectivity for real-time ERP data transfer.", icon: "Database" },
-            { title: "Auto Handling", description: "Automatic roll transport and lifting conveyors for seamless material flow.", icon: "Activity" },
+            { title: "Inspection System", description: "Roll-to-roll fabric inspection system.", icon: "Eye" },
+            { title: "Tension Control", description: "Smooth fabric tension control.", icon: "Activity" },
+            { title: "Lighting", description: "Uniform inspection lighting.", icon: "Sun" },
+            { title: "Ergonomics", description: "Operator-friendly control layout.", icon: "User" },
+            { title: "Durability", description: "Heavy-duty frame for continuous operation.", icon: "Shield" },
+            { title: "Alignment", description: "Accurate roll alignment & rewinding.", icon: "Minimize" },
+        ],
+        advancedFeatures: [
+            {
+                title: "Fabric Cleaning & Brushing System",
+                description: "Improves inspection accuracy by removing lint and dust.",
+                items: ["Integrated brushing unit", "Dust collection system with 3 HP filter box"]
+            },
+            {
+                title: "Automatic Fabric Roll Handling",
+                description: "Seamless material movement.",
+                items: ["Roll transport conveyors", "Lifting-type conveyor options (per meter)", "Automatic roll transfer between stations"]
+            },
+            {
+                title: "Auto Feed & Unwinding System",
+                description: "Reduces manual handling & labor dependency.",
+                items: ["Reserve roll table", "Auto lifting mechanism", "Power unwinder cradle"]
+            },
+            {
+                title: "Weighing & Data Management",
+                description: "Industry 4.0 ready data transfer.",
+                items: ["Fabric roll weighing cradle", "Digital display control unit", "Roll weight storage", "Data transfer via Ethernet cable"]
+            },
+            {
+                title: "Stretch Film Wrapping Unit",
+                description: "Professional packing finish.",
+                items: ["Automatic fabric roll wrapping", "Ensures safe handling & transport"]
+            }
+        ],
+        whyChooseUs: [
+            "Decades of textile machinery engineering expertise",
+            "Machines designed for Indian & global production conditions",
+            "Transparent pricing & modular configuration",
+            "Faster service response and technical support",
+            "Custom-built solutions based on customer workflow"
+        ],
+        cardwellDifference: [
+            { advantage: "Modular machine design", benefit: "Lower initial investment" },
+            { advantage: "Optional automation", benefit: "Pay only for what you need" },
+            { advantage: "Industry 4.0 ready options", benefit: "Digital traceability" },
+            { advantage: "Robust build quality", benefit: "Long machine life" },
+            { advantage: "Local support", benefit: "Reduced downtime" }
+        ],
+        roi: {
+            benefits: ["Lower fabric rejection rates", "Reduced labor costs", "Improved packing & handling efficiency", "Scalable automation without replacing machinery"],
+            highlights: ["Faster payback through quality improvement", "Reduced wastage & rework", "Higher throughput with automation", "Long-term operational savings"],
+            period: "12–24 months (based on production volume & selected options)"
+        },
+        industries: [
+            "Textile Mills",
+            "Fabric Processing Units",
+            "Garment Manufacturers",
+            "Export-oriented Fabric Units"
         ],
         comparison: [
             { feature: "Rejection Rate", cardwell: "Minimal (<1%)", market: "Standard (3-5%)", advantage: true },
