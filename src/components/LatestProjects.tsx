@@ -7,7 +7,7 @@ const projects = [
     {
         id: 1,
         title: "Complete Knit Processing Plant",
-        location: "Dhaka, Bangladesh",
+        location: "Tirupur, Tamil Nadu",
         description: "Turnkey installation of reversers, inspection lines, and packing systems for a 20-ton/day facility.",
         image: "/img/fabric_machines_banner.png", // Reusing banner for now
         tag: "Turnkey Project"
@@ -15,7 +15,7 @@ const projects = [
     {
         id: 2,
         title: "High-Speed Auto Packing Upgrade",
-        location: "Coimbatore, India",
+        location: "Coimbatore, Tamil Nadu",
         description: "Replaced legacy manual packing with our PLC-controlled Automatic Roll Packing system, increasing output by 300%.",
         image: "/img/gears.png", // Reusing placeholder
         tag: "Modernization"
@@ -23,7 +23,7 @@ const projects = [
     {
         id: 3,
         title: "Technical Textile Inspection Line",
-        location: "Bursa, Turkey",
+        location: "Salem, Tamil Nadu",
         description: "Customized wide-width inspection machines for heavy industrial canvas and coated fabrics.",
         image: "/img/hero_industrial_daylight.png", // Reusing placeholder
         tag: "Custom Engineering"

@@ -14,18 +14,18 @@ const testimonials = [
     },
     {
         id: 2,
-        text: "The precision of their open-width inspection system is unmatched. It has helped us maintain our zero-defect export policy consistently for 3 years.",
-        author: "Sarah Jenkins",
+        text: "The precision of their open-width inspection system is unmatched. It has helped us maintain our zero-defect policy consistently for 3 years.",
+        author: "Mr. Senthil Kumar",
         position: "Production Head",
-        company: "Global Tex Solutions, Vietnam",
+        company: "SKM Fabrics, Erode",
         image: "/img/speed-frame.png" // Placeholder
     },
     {
         id: 3,
-        text: "Robust machinery that just keeps running. Their after-sales support is prompt, but honestly, we rarely need to call them.",
-        author: "Mr. Ahmed",
-        position: "Plant Manager",
-        company: "Nile Fabrics, Egypt",
+        text: "Robust machinery that just keeps running in our continuous processing unit. Their service team in Coimbatore is always just a call away.",
+        author: "Mr. Palanisamy",
+        position: "Managing Director",
+        company: "Karur Tex, Karur",
         image: "/img/comber.png" // Placeholder
     }
 ];

@@ -14,20 +14,20 @@ export default function GlobalReach() {
 
                     <div className="md:w-1/2 animate-fade-slide-in">
                         <span className="inline-block py-1 px-3 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold text-xs tracking-widest uppercase mb-6">
-                            Global Operations
+                            National Operations
                         </span>
                         <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
-                            Deployed <br /><span className="text-emerald-500">Worldwide</span>
+                            Trusted <br /><span className="text-emerald-500">Across India</span>
                         </h2>
                         <p className="text-slate-600 text-lg font-medium leading-relaxed mb-10">
-                            Our machinery powers textile production lines in over 15 countries. From the high-volume mills of Bangladesh to the emerging markets of Africa, Cardwell engineering delivers consistent performance.
+                            Our machinery powers textile production lines in major hubs across the nation. From the knitwear capital of Tirupur to the textile centers of Gujarat and Maharashtra, Cardwell engineering delivers consistent performance.
                         </p>
 
                         <div className="grid grid-cols-2 gap-6">
                             {[
-                                { label: "Export Countries", value: "15+", icon: Globe },
+                                { label: "States Covered", value: "12+", icon: Globe },
                                 { label: "Active Installations", value: "2500+", icon: Award },
-                                { label: "Logistics Partners", value: "Global", icon: Plane },
+                                { label: "Service Network", value: "Pan-India", icon: Plane },
                                 { label: "Support Centers", value: "24/7", icon: MapPin },
                             ].map((stat, i) => (
                                 <div key={i} className="bg-white border border-slate-100 p-6 rounded-[1.5rem] hover:border-emerald-200 transition-all hover:shadow-lg hover:shadow-emerald-500/10 group">
