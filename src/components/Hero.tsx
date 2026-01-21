@@ -8,7 +8,7 @@ export default function Hero() {
     return (
         <section className="relative h-[600px] w-full flex items-center overflow-hidden bg-slate-900 border-b-4 border-emerald-600">
 
-            {/* 1. Full Background Image (Raw, No Overlay) */}
+            {/* 1. Full Background Image (Dark Gradient Theme) */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
                     src="/img/hero_industrial_daylight.png"
@@ -17,68 +17,70 @@ export default function Hero() {
                     className="object-cover"
                     priority
                 />
+                {/* Dark Gradient Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
             </div>
 
-            {/* Content Container (Compact Professional Card) */}
-            <div className="container mx-auto px-6 md:px-8 relative z-20">
-                <div className="max-w-xl bg-[#0F172A]/90 backdrop-blur-xl p-8 shadow-2xl border-l-8 border-emerald-500 animate-fade-slide-in rounded-r-3xl">
+            {/* Content Container (Immersive Floating Layout) */}
+            <div className="container mx-auto px-6 md:px-8 relative z-20 h-full flex items-center">
+                <div className="max-w-3xl animate-fade-slide-in pt-12">
 
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 mb-4">
-                        <span className="flex h-2 w-2 relative">
+                    <div className="inline-flex items-center gap-2 mb-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full pr-4 pl-1 py-1">
+                        <span className="flex h-6 w-6 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            <span className="relative inline-flex rounded-full h-6 w-6 bg-emerald-500 border-2 border-slate-900"></span>
                         </span>
                         <span className="text-[10px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
-                            Series 2026 Ready
+                            Series 2026
                         </span>
                     </div>
 
                     {/* Headline */}
-                    <h1 className="text-3xl md:text-5xl font-black text-white leading-none tracking-tight uppercase mb-4">
+                    <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight uppercase mb-6 drop-shadow-2xl">
                         Engineered <br />
-                        <span className="text-emerald-500">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600 filter drop-shadow-lg">
                             Precision
                         </span>
                     </h1>
 
                     {/* Description */}
-                    <p className="text-sm md:text-base text-slate-400 font-medium leading-relaxed mb-6">
+                    <p className="text-base md:text-xl text-slate-300 font-medium leading-relaxed mb-10 max-w-2xl text-shadow-sm">
                         Cardwell powers the world's leading textile mills with automated Acid Treatment & Yarn Conditioning systems.
-                        <strong className="block mt-1 text-white">
+                        <span className="block mt-2 text-white font-bold">
                             Zero downtime. Maximum efficiency.
-                        </strong>
+                        </span>
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-col sm:flex-row gap-4">
                         <Link
                             href="/products"
-                            className="inline-flex items-center justify-center gap-2 bg-emerald-600 text-white px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-emerald-500 transition-all shadow-lg hover:shadow-emerald-500/30 rounded-none group"
+                            className="inline-flex items-center justify-center gap-3 bg-emerald-600 text-white px-8 py-4 font-bold text-sm uppercase tracking-widest hover:bg-emerald-500 transition-all shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] rounded-full group"
                         >
                             View Machinery
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
 
-                        <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-white border-2 border-slate-700 font-bold text-xs uppercase tracking-widest hover:border-emerald-500 hover:text-emerald-400 transition-all rounded-none">
-                            <Play className="w-3 h-3 fill-current" />
+                        <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-sm text-white border border-white/20 font-bold text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white/40 transition-all rounded-full">
+                            <Play className="w-4 h-4 fill-white" />
                             Live Demo
                         </button>
                     </div>
 
-                    {/* Quick Stats Panel inside Card */}
-                    <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-800">
+                    {/* Quick Stats (Integrated into layout) */}
+                    <div className="flex gap-12 mt-12 border-t border-slate-800/50 pt-8">
                         <div>
-                            <div className="text-xl font-black text-white">40+</div>
-                            <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Years</div>
+                            <div className="text-3xl font-black text-white">40+</div>
+                            <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mt-1">Years Excellence</div>
                         </div>
                         <div>
-                            <div className="text-xl font-black text-white">500+</div>
-                            <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Units</div>
+                            <div className="text-3xl font-black text-white">500+</div>
+                            <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mt-1">Units Deployed</div>
                         </div>
                         <div>
-                            <div className="text-xl font-black text-white">24/7</div>
-                            <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Support</div>
+                            <div className="text-3xl font-black text-white">Global</div>
+                            <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mt-1">Service Network</div>
                         </div>
                     </div>
                 </div>
