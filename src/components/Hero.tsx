@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const heroSlides = [
     {
@@ -30,6 +30,23 @@ const heroSlides = [
 
 export default function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+    // Handle video playback
+    useEffect(() => {
+        videoRefs.current.forEach((video: HTMLVideoElement | null, index: number) => {
+            if (video) {
+                if (index === currentSlide) {
+                    video.play().catch((e: any) => {
+                        if (e.name !== 'AbortError') console.error("Video autoplay failed:", e);
+                    });
+                } else {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            }
+        });
+    }, [currentSlide]);
 
     // Auto-advance logic
     useEffect(() => {
@@ -58,8 +75,8 @@ export default function Hero() {
                         }`}
                 >
                     <video
+                        ref={(el) => { videoRefs.current[index] = el }}
                         src={slide.src}
-                        autoPlay
                         loop
                         muted
                         playsInline

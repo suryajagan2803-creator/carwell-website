@@ -38,7 +38,11 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     useEffect(() => {
         if (slides[activeSlideIndex].type === 'video' && videoRef.current) {
             videoRef.current.currentTime = 0;
-            videoRef.current.play().catch(e => console.error("Video play failed:", e));
+            videoRef.current.play().catch(e => {
+                if (e.name !== 'AbortError') {
+                    console.error("Video play failed:", e);
+                }
+            });
         } else if (videoRef.current) {
             videoRef.current.pause();
         }
