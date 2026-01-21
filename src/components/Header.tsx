@@ -64,14 +64,14 @@ export default function Header() {
                                 <div className="bg-white w-72 border border-slate-100 rounded-2xl shadow-2xl overflow-hidden p-2 ring-1 ring-slate-900/5">
                                     <Link
                                         href="/fabric-processing"
-                                        className="block p-4 hover:bg-emerald-50 rounded-xl transition-colors group/link"
+                                        className="block p-4 rounded-xl transition-colors group/link"
                                     >
                                         <div className="text-sm font-bold text-slate-900 mb-1 group-hover/link:text-emerald-600 transition-colors">Fabric Processing</div>
                                         <div className="text-[10px] text-slate-500 font-medium">Inspection, Finishing, Packing</div>
                                     </Link>
                                     <Link
                                         href="/spinning-accessories"
-                                        className="block p-4 hover:bg-emerald-50 rounded-xl transition-colors group/link"
+                                        className="block p-4 rounded-xl transition-colors group/link"
                                     >
                                         <div className="text-sm font-bold text-slate-900 mb-1 group-hover/link:text-emerald-600 transition-colors">Spinning Accessories</div>
                                         <div className="text-[10px] text-slate-500 font-medium">Apron Doffing, Spares</div>
