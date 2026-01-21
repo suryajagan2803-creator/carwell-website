@@ -1,86 +1,121 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Star, PlayCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
+const heroSlides = [
+    {
+        id: 1,
+        type: 'video',
+        src: '/videos/demo.mp4',
+        headline: "THE GOLD STANDARD IN",
+        subhead: "TEXTILE ENGINEERING"
+    },
+    {
+        id: 2,
+        type: 'video',
+        src: '/videos/demo.mp4', // Reusing for demo as we only have one video asset
+        headline: "PRECISION DRIVEN",
+        subhead: "PERFORMANCE"
+    },
+    {
+        id: 3,
+        type: 'video',
+        src: '/videos/demo.mp4', // Reusing for demo
+        headline: "GLOBAL LEADER",
+        subhead: "SINCE 1984"
+    }
+];
 
 export default function Hero() {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+        }, 3000); // 3 seconds per slide as requested
+
+        return () => clearInterval(timer);
+    }, []);
+
     return (
-        <section className="relative h-[750px] w-full flex items-center overflow-hidden bg-slate-50 border-b border-slate-200">
+        <section className="relative h-[85vh] w-full flex items-center overflow-hidden bg-slate-900 border-b border-slate-800">
 
-            {/* Background Image with Slow Zoom (Ken Burns Effect) */}
-            <div className="absolute inset-0 z-0 select-none">
-                <Image
-                    src="/img/cardwell_hero_bold.png"
-                    alt="Textile Processing Machinery"
-                    fill
-                    className="object-cover transform scale-100 hover:scale-105 transition-transform duration-[20s] ease-linear origin-center"
-                    priority
-                />
-                {/* Elegant Gradient overlays for depth and readability - Reduced opacity for clarity */}
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/40 to-transparent/10" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-50/50 to-transparent" />
-            </div>
+            {/* Background Slides */}
+            {heroSlides.map((slide, index) => (
+                <div
+                    key={slide.id}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        }`}
+                >
+                    <video
+                        src={slide.src}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="object-cover w-full h-full"
+                    />
+                    {/* Dark gradient overlay for text readability */}
+                    <div className="absolute inset-0 bg-black/50" />
+                </div>
+            ))}
 
-            <div className="container mx-auto px-6 md:px-12 relative z-20 h-full flex items-center">
+            <div className="container mx-auto px-6 md:px-12 relative z-20 h-full flex flex-col justify-center items-start text-white">
 
-                {/* Floating "Solid" Content Card for Clearer, Bolder Look */}
-                <div className="max-w-xl bg-white p-10 md:p-14 rounded-2xl shadow-2xl animate-fade-slide-in border-l-8 border-emerald-600">
+                {/* Animated Text Content */}
+                <div className="max-w-4xl space-y-6">
 
-                    {/* Bold Badge */}
-                    <div className="inline-flex items-center gap-2 mb-8">
-                        <span className="px-3 py-1 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-[0.2em]">
-                            Since 1984
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 mb-2 animate-fade-in-up">
+                        <span className="px-3 py-1 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded">
+                            Excellence in Engineering
                         </span>
-                        <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-[0.2em]">
-                            Global Leader
-                        </span>
+                        <div className="h-px w-10 bg-emerald-500/50"></div>
                     </div>
 
-                    {/* Headline - Strong, Bold, Clear */}
-                    <h1 className="text-5xl md:text-6xl font-black text-slate-900 leading-tight mb-6 tracking-tight">
-                        THE GOLD STANDARD IN
-                        <span className="text-emerald-700 block">TEXTILE ENGINEERING</span>
+                    {/* Dynamic Headlines based on slide */}
+                    <h1 className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tight drop-shadow-2xl">
+                        {heroSlides[currentSlide].headline}
+                        <span className="block text-emerald-400">{heroSlides[currentSlide].subhead}</span>
                     </h1>
 
-                    {/* Description - Direct & Confident */}
-                    <p className="text-lg text-slate-600 font-medium leading-relaxed mb-10 border-l-2 border-slate-200 pl-6">
+                    <p className="text-lg md:text-xl text-slate-200 font-medium max-w-2xl leading-relaxed drop-shadow-lg">
                         We engineer the machines that power the world's finest fabric mills. Precision, durability, and innovation in every component.
                     </p>
 
-                    {/* Buttons - High Contrast */}
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    {/* Buttons */}
+                    <div className="flex flex-wrap items-center gap-4 pt-6">
                         <Link
                             href="/products"
-                            className="inline-flex justify-center items-center px-8 py-4 bg-emerald-700 text-white font-black text-sm uppercase tracking-widest hover:bg-emerald-800 transition-all shadow-lg hover:shadow-emerald-500/30"
+                            className="group px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm uppercase tracking-widest rounded transition-all shadow-lg hover:shadow-emerald-500/40 flex items-center gap-2"
                         >
-                            Explore Machines
+                            Explore Machines <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
+
                         <Link
                             href="/contact"
-                            className="inline-flex justify-center items-center px-8 py-4 bg-slate-900 text-white font-black text-sm uppercase tracking-widest hover:bg-slate-800 transition-all"
+                            className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-black text-sm uppercase tracking-widest rounded border border-white/20 transition-all"
                         >
-                            Get A Quote
+                            Get Quote
                         </Link>
                     </div>
-
-                    {/* Stats - Tech Focused */}
-                    <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-3 gap-4">
-                        <div>
-                            <div className="text-3xl font-black text-slate-900">12+</div>
-                            <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">States Covered</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-black text-slate-900">2.5k</div>
-                            <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Installations</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-black text-slate-900">100%</div>
-                            <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">R&D In-House</div>
-                        </div>
-                    </div>
-
                 </div>
+
+                {/* Slider Indicators */}
+                <div className="absolute bottom-12 left-6 md:left-12 flex items-center gap-3">
+                    {heroSlides.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`h-1 transition-all duration-300 rounded-full ${index === currentSlide ? 'w-12 bg-emerald-500' : 'w-4 bg-white/30 hover:bg-white/50'
+                                }`}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
+
             </div>
         </section>
     );
