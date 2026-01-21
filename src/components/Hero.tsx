@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Star, PlayCircle } from 'lucide-react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const heroSlides = [
@@ -9,38 +9,46 @@ const heroSlides = [
         id: 1,
         type: 'video',
         src: '/videos/demo.mp4',
-        headline: "THE GOLD STANDARD IN",
-        subhead: "TEXTILE ENGINEERING"
+        headline: "PRECISION ENGINEERING",
+        subhead: "DRIVING THE FUTURE OF TEXTILES"
     },
     {
         id: 2,
         type: 'video',
-        src: '/videos/demo.mp4', // Reusing for demo as we only have one video asset
-        headline: "PRECISION DRIVEN",
-        subhead: "PERFORMANCE"
+        src: '/videos/demo.mp4',
+        headline: "GLOBAL INNOVATION",
+        subhead: "SUSTAINABLE FABRIC SOLUTIONS"
     },
     {
         id: 3,
         type: 'video',
-        src: '/videos/demo.mp4', // Reusing for demo
-        headline: "GLOBAL LEADER",
-        subhead: "SINCE 1984"
+        src: '/videos/demo.mp4',
+        headline: "MAXIMUM EFFICIENCY",
+        subhead: "ZERO COMPROMISE ON QUALITY"
     }
 ];
 
 export default function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    // Auto-advance logic
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-        }, 3000); // 3 seconds per slide as requested
-
+            nextSlide();
+        }, 5000); // 5 seconds for better readability of large text
         return () => clearInterval(timer);
-    }, []);
+    }, [currentSlide]);
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+    };
 
     return (
-        <section className="relative h-[85vh] w-full flex items-center overflow-hidden bg-slate-900 border-b border-slate-800">
+        <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-900">
 
             {/* Background Slides */}
             {heroSlides.map((slide, index) => (
@@ -57,66 +65,57 @@ export default function Hero() {
                         playsInline
                         className="object-cover w-full h-full"
                     />
-                    {/* Dark gradient overlay for text readability */}
-                    <div className="absolute inset-0 bg-black/50" />
+                    {/* Darker overlay for text contrast */}
+                    <div className="absolute inset-0 bg-black/40" />
                 </div>
             ))}
 
-            <div className="container mx-auto px-6 md:px-12 relative z-20 h-full flex flex-col justify-center items-start text-white">
+            {/* Main Centered Content */}
+            <div className="relative z-20 container mx-auto px-12 flex flex-col items-center text-center">
 
-                {/* Animated Text Content */}
-                <div className="max-w-4xl space-y-6">
+                {/* Headline - Massive Mode */}
+                <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-sans font-black text-white uppercase leading-[0.9] tracking-tighter mb-6 drop-shadow-xl animate-fade-in-up">
+                    <span className="block">{heroSlides[currentSlide].headline.split(' ')[0]}</span>
+                    <span className="block">{heroSlides[currentSlide].headline.split(' ').slice(1).join(' ')}</span>
+                </h1>
 
-                    {/* Badge */}
-                    <div className="inline-flex items-center gap-2 mb-2 animate-fade-in-up">
-                        <span className="px-3 py-1 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded">
-                            Excellence in Engineering
-                        </span>
-                        <div className="h-px w-10 bg-emerald-500/50"></div>
+                {/* Subtext */}
+                <p className="text-lg md:text-2xl text-slate-100 font-light mb-12 max-w-3xl drop-shadow-md tracking-wide">
+                    {heroSlides[currentSlide].subhead}
+                </p>
+
+                {/* "Baumeister" Style Split Button */}
+                <div className="group flex items-stretch cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+                    <Link
+                        href="/products"
+                        className="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold text-sm uppercase tracking-widest px-10 py-5 flex items-center transition-colors"
+                    >
+                        Read More
+                    </Link>
+                    <div className="bg-slate-800 text-white px-5 flex items-center justify-center transition-colors group-hover:bg-slate-700">
+                        <ArrowRight className="w-5 h-5" />
                     </div>
-
-                    {/* Dynamic Headlines based on slide */}
-                    <h1 className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tight drop-shadow-2xl">
-                        {heroSlides[currentSlide].headline}
-                        <span className="block text-emerald-400">{heroSlides[currentSlide].subhead}</span>
-                    </h1>
-
-                    <p className="text-lg md:text-xl text-slate-200 font-medium max-w-2xl leading-relaxed drop-shadow-lg">
-                        We engineer the machines that power the world's finest fabric mills. Precision, durability, and innovation in every component.
-                    </p>
-
-                    {/* Buttons */}
-                    <div className="flex flex-wrap items-center gap-4 pt-6">
-                        <Link
-                            href="/products"
-                            className="group px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm uppercase tracking-widest rounded transition-all shadow-lg hover:shadow-emerald-500/40 flex items-center gap-2"
-                        >
-                            Explore Machines <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-
-                        <Link
-                            href="/contact"
-                            className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-black text-sm uppercase tracking-widest rounded border border-white/20 transition-all"
-                        >
-                            Get Quote
-                        </Link>
-                    </div>
-                </div>
-
-                {/* Slider Indicators */}
-                <div className="absolute bottom-12 left-6 md:left-12 flex items-center gap-3">
-                    {heroSlides.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setCurrentSlide(index)}
-                            className={`h-1 transition-all duration-300 rounded-full ${index === currentSlide ? 'w-12 bg-emerald-500' : 'w-4 bg-white/30 hover:bg-white/50'
-                                }`}
-                            aria-label={`Go to slide ${index + 1}`}
-                        />
-                    ))}
                 </div>
 
             </div>
+
+            {/* Navigation Arrows (Sides) */}
+            <button
+                onClick={prevSlide}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white hover:bg-slate-100 w-16 h-16 flex items-center justify-center group transition-colors"
+                aria-label="Previous Slide"
+            >
+                <ArrowLeft className="w-6 h-6 text-slate-900 group-hover:-translate-x-1 transition-transform" />
+            </button>
+
+            <button
+                onClick={nextSlide}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-white hover:bg-slate-100 w-16 h-16 flex items-center justify-center group transition-colors"
+                aria-label="Next Slide"
+            >
+                <ArrowRight className="w-6 h-6 text-slate-900 group-hover:translate-x-1 transition-transform" />
+            </button>
+
         </section>
     );
 }
