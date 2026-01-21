@@ -47,25 +47,25 @@ export default function Header() {
             </div>
 
             {/* Main Bar - Navigation */}
-            <div className={`bg-white transition-all duration-300 border-b border-slate-100 ${isScrolled ? 'py-2 shadow-md' : 'py-3'}`}>
+            <div className={`bg-white transition-all duration-300 border-b border-slate-100 ${isScrolled ? 'py-1 shadow-md' : 'py-2'}`}>
                 <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
 
                     {/* Logo Area */}
                     <Link href="/" className="group flex flex-col justify-center select-none">
                         <div className="flex items-baseline gap-1">
-                            <span className="text-3xl font-black text-slate-900 uppercase tracking-tighter leading-none">
+                            <span className="text-2xl font-black text-slate-900 uppercase tracking-tighter leading-none">
                                 Card<span className="text-emerald-600">Well</span>
                             </span>
                             <span className="text-[10px] text-slate-400 font-bold">®</span>
                         </div>
-                        <span className="text-[11px] font-bold text-slate-600 uppercase tracking-widest mt-0.5 group-hover:text-emerald-600 transition-colors">
+                        <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest mt-0.5 group-hover:text-emerald-600 transition-colors">
                             Sri Ram Textile Engineering
                         </span>
                     </Link>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden xl:flex items-center gap-8">
-                        <Link href="/" className="text-sm font-bold uppercase tracking-widest text-slate-900 hover:text-emerald-600 transition-colors">
+                        <Link href="/" className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-emerald-600 transition-colors">
                             Home
                         </Link>
 
@@ -74,7 +74,7 @@ export default function Header() {
                             className="relative group h-full py-4"
                             onMouseEnter={() => setIsMobileMenuOpen(true)} // Reusing state logic or simply group-hover css
                         >
-                            <button className="flex items-center gap-1 text-sm font-bold uppercase tracking-widest text-slate-900 hover:text-emerald-600 transition-colors">
+                            <button className="flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-emerald-600 transition-colors">
                                 Products <ChevronDown className="w-4 h-4" />
                             </button>
 
@@ -93,10 +93,10 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <Link href="/about" className="text-sm font-bold uppercase tracking-widest text-slate-900 hover:text-emerald-600 transition-colors">
+                        <Link href="/about" className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-emerald-600 transition-colors">
                             About
                         </Link>
-                        <Link href="/contact" className="text-sm font-bold uppercase tracking-widest text-slate-900 hover:text-emerald-600 transition-colors">
+                        <Link href="/contact" className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-emerald-600 transition-colors">
                             Contact
                         </Link>
                     </nav>

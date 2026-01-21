@@ -74,12 +74,12 @@ export default function Hero() {
             <div className="relative z-20 container mx-auto px-12 flex flex-col items-center text-center">
 
                 {/* Headline - Massive Mode */}
-                <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-sans font-black text-white uppercase leading-[0.9] tracking-tighter mb-6 drop-shadow-xl animate-fade-in-up max-w-[90vw]">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-sans font-black text-white uppercase leading-none tracking-tighter mb-6 drop-shadow-xl animate-fade-in-up max-w-6xl mx-auto">
                     {heroSlides[currentSlide].headline}
                 </h1>
 
                 {/* Subtext */}
-                <p className="text-lg md:text-2xl text-slate-100 font-light mb-12 max-w-3xl drop-shadow-md tracking-wide">
+                <p className="text-base md:text-lg text-slate-100 font-light mb-8 max-w-3xl drop-shadow-md tracking-wide mx-auto">
                     {heroSlides[currentSlide].subhead}
                 </p>
 
