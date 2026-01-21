@@ -88,7 +88,7 @@ export default function Hero() {
                 <div className="group flex items-stretch cursor-pointer hover:-translate-y-1 transition-transform duration-300">
                     <Link
                         href="/products"
-                        className="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold text-sm uppercase tracking-widest px-10 py-5 flex items-center transition-colors"
+                        className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm uppercase tracking-widest px-10 py-5 flex items-center transition-colors"
                     >
                         Read More
                     </Link>
