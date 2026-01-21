@@ -245,98 +245,155 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                             </div>
                         </div>
 
-                        {/* RIGHT: SCROLLING CONTENT FEED (The "Rolling" Part) */}
-                        <div className="lg:col-span-8 space-y-6">
+                        {/* RIGHT: WHY CHOOSE CARDWELL */}
+                        <div className="lg:col-span-8 space-y-8">
+                            {/* Section Header */}
+                            <div className="text-left">
+                                <h2 className="text-3xl font-black text-slate-900 mb-2">Why Choose Cardwell?</h2>
+                                <p className="text-slate-500 font-medium">Engineered for performance, safety, and long-term value.</p>
+                            </div>
 
-                            {/* 1. VISUAL COMPARISON CARD */}
-                            <div className="bg-slate-900 rounded-3xl p-1 overflow-hidden shadow-2xl">
-                                <div className="relative h-64 md:h-80 bg-slate-800 rounded-[20px] overflow-hidden group">
-                                    {/* Split View */}
-                                    <div className="absolute inset-y-0 left-0 w-1/2 bg-slate-800 border-r border-slate-700/50 flex flex-col justify-center items-center text-center p-6">
-                                        <div className="bg-slate-700/50 p-4 rounded-full mb-4 grayscale opacity-50 group-hover:opacity-100 transition-opacity">
-                                            {/* Placeholder for "Old Way" */}
-                                            <Layers className="w-8 h-8 text-slate-400" />
-                                        </div>
-                                        <h4 className="text-slate-400 font-bold text-sm uppercase mb-1">Standard Market</h4>
-                                        <p className="text-slate-600 text-xs">Manual Operation</p>
-                                    </div>
-                                    <div className="absolute inset-y-0 right-0 w-1/2 bg-emerald-900/10 flex flex-col justify-center items-center text-center p-6 relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-emerald-500/10 animate-pulse" />
-                                        <div className="bg-emerald-500 p-4 rounded-full mb-4 shadow-[0_0_20px_rgba(16,185,129,0.4)] relative z-10">
-                                            <Zap className="w-8 h-8 text-white" />
-                                        </div>
-                                        <h4 className="text-white font-bold text-sm uppercase mb-1 relative z-10">Cardwell Tech</h4>
-                                        <p className="text-emerald-400 text-xs relative z-10">AI-Driven Automation</p>
-                                    </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {/* Card 1 */}
+                                <div className="bg-[#0F172A] p-8 rounded-[2rem] flex flex-col items-start gap-6 hover:scale-[1.01] transition-transform shadow-2xl relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-[40px] -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/20 transition-colors" />
 
-                                    {/* VS Badge */}
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 text-white font-black italic rounded-full w-12 h-12 flex items-center justify-center border-4 border-slate-800 z-20 shadow-xl">
-                                        VS
+                                    <div className="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center border border-slate-700 shadow-lg group-hover:border-emerald-500/50 transition-colors">
+                                        <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+                                    </div>
+                                    <div className="relative z-10">
+                                        <h3 className="text-white font-bold text-xl mb-3">Innovative Air Stream</h3>
+                                        <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                                            Proprietary system prevents fabric damage with <span className="text-emerald-400">zero mechanical traction</span>, ensuring safety for even the most delicate lots.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Card 2 */}
+                                <div className="bg-[#0F172A] p-8 rounded-[2rem] flex flex-col items-start gap-6 hover:scale-[1.01] transition-transform shadow-2xl relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-[40px] -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/20 transition-colors" />
+
+                                    <div className="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center border border-slate-700 shadow-lg group-hover:border-emerald-500/50 transition-colors">
+                                        <Activity className="w-6 h-6 text-emerald-500" />
+                                    </div>
+                                    <div className="relative z-10">
+                                        <h3 className="text-white font-bold text-xl mb-3">Massive Labor Savings</h3>
+                                        <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                                            Designed for high-speed automated operation, reducing manual workforce requirements by <span className="text-emerald-400">up to 60%</span> annually.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Card 3 (Full Width) */}
+                                <div className="bg-[#0F172A] p-8 rounded-[2rem] flex flex-col items-start gap-6 hover:scale-[1.01] transition-transform shadow-2xl relative overflow-hidden group md:col-span-2">
+                                    <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/10 transition-colors" />
+
+                                    <div className="flex flex-col md:flex-row gap-6 items-start md:items-center relative z-10">
+                                        <div className="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center border border-slate-700 shadow-lg group-hover:border-emerald-500/50 transition-colors shrink-0">
+                                            <Settings className="w-6 h-6 text-emerald-500" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-white font-bold text-xl mb-2">Versatile Visual Configurations</h3>
+                                            <p className="text-slate-400 text-sm leading-relaxed font-medium max-w-xl">
+                                                Modular design architecture capable of adapting to any production scale or factory layout constraint without performance compromise.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* 2. DETAILED COMPARISON TABLE */}
-                            <div className="bg-[#0F172A] rounded-3xl p-6 md:p-8 flex flex-col shadow-2xl relative overflow-hidden">
-                                {/* Background Elements */}
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                            {/* OLD CONTENT HIDDEN */}
+                            <div className="hidden">
 
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 relative z-10">
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-white mb-1">Why Cardwell Stands Out</h2>
-                                        <p className="text-slate-400 text-xs">Direct feature comparison.</p>
-                                    </div>
-                                    <div className="flex bg-slate-800/50 p-1 rounded-lg border border-slate-700/50">
-                                        <span className="px-3 py-1 bg-slate-700 rounded text-white text-[10px] font-bold shadow-sm">Table View</span>
+                                {/* 1. VISUAL COMPARISON CARD */}
+                                <div className="bg-slate-900 rounded-3xl p-1 overflow-hidden shadow-2xl">
+                                    <div className="relative h-64 md:h-80 bg-slate-800 rounded-[20px] overflow-hidden group">
+                                        {/* Split View */}
+                                        <div className="absolute inset-y-0 left-0 w-1/2 bg-slate-800 border-r border-slate-700/50 flex flex-col justify-center items-center text-center p-6">
+                                            <div className="bg-slate-700/50 p-4 rounded-full mb-4 grayscale opacity-50 group-hover:opacity-100 transition-opacity">
+                                                {/* Placeholder for "Old Way" */}
+                                                <Layers className="w-8 h-8 text-slate-400" />
+                                            </div>
+                                            <h4 className="text-slate-400 font-bold text-sm uppercase mb-1">Standard Market</h4>
+                                            <p className="text-slate-600 text-xs">Manual Operation</p>
+                                        </div>
+                                        <div className="absolute inset-y-0 right-0 w-1/2 bg-emerald-900/10 flex flex-col justify-center items-center text-center p-6 relative overflow-hidden">
+                                            <div className="absolute inset-0 bg-emerald-500/10 animate-pulse" />
+                                            <div className="bg-emerald-500 p-4 rounded-full mb-4 shadow-[0_0_20px_rgba(16,185,129,0.4)] relative z-10">
+                                                <Zap className="w-8 h-8 text-white" />
+                                            </div>
+                                            <h4 className="text-white font-bold text-sm uppercase mb-1 relative z-10">Cardwell Tech</h4>
+                                            <p className="text-emerald-400 text-xs relative z-10">AI-Driven Automation</p>
+                                        </div>
+
+                                        {/* VS Badge */}
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 text-white font-black italic rounded-full w-12 h-12 flex items-center justify-center border-4 border-slate-800 z-20 shadow-xl">
+                                            VS
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 overflow-hidden relative z-10">
-                                    <div className="grid grid-cols-12 bg-slate-800/80 border-b border-slate-700 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                                        <div className="col-span-6 p-4 md:pl-6">Feature</div>
-                                        <div className="col-span-3 p-4 text-center text-emerald-400">Cardwell</div>
-                                        <div className="col-span-3 p-4 text-center text-slate-500">Standard</div>
+                                {/* 2. DETAILED COMPARISON TABLE */}
+                                <div className="bg-[#0F172A] rounded-3xl p-6 md:p-8 flex flex-col shadow-2xl relative overflow-hidden">
+                                    {/* Background Elements */}
+                                    <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+
+                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 relative z-10">
+                                        <div>
+                                            <h2 className="text-2xl font-bold text-white mb-1">Why Cardwell Stands Out</h2>
+                                            <p className="text-slate-400 text-xs">Direct feature comparison.</p>
+                                        </div>
+                                        <div className="flex bg-slate-800/50 p-1 rounded-lg border border-slate-700/50">
+                                            <span className="px-3 py-1 bg-slate-700 rounded text-white text-[10px] font-bold shadow-sm">Table View</span>
+                                        </div>
                                     </div>
-                                    <div className="divide-y divide-slate-700/50">
-                                        {product?.comparison?.map((row, i) => (
-                                            <div key={i} className="grid grid-cols-12 items-center hover:bg-white/5 transition-colors group">
-                                                <div className="col-span-6 p-3 md:pl-6 font-medium text-slate-200 text-xs md:text-sm">{row.feature}</div>
-                                                <div className="col-span-3 p-3 flex justify-center">
-                                                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                                                        <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+
+                                    <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 overflow-hidden relative z-10">
+                                        <div className="grid grid-cols-12 bg-slate-800/80 border-b border-slate-700 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                                            <div className="col-span-6 p-4 md:pl-6">Feature</div>
+                                            <div className="col-span-3 p-4 text-center text-emerald-400">Cardwell</div>
+                                            <div className="col-span-3 p-4 text-center text-slate-500">Standard</div>
+                                        </div>
+                                        <div className="divide-y divide-slate-700/50">
+                                            {product?.comparison?.map((row, i) => (
+                                                <div key={i} className="grid grid-cols-12 items-center hover:bg-white/5 transition-colors group">
+                                                    <div className="col-span-6 p-3 md:pl-6 font-medium text-slate-200 text-xs md:text-sm">{row.feature}</div>
+                                                    <div className="col-span-3 p-3 flex justify-center">
+                                                        <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                                                            <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-span-3 p-3 flex justify-center opacity-40 group-hover:opacity-100 transition-opacity">
+                                                        <div className="w-5 h-5 rounded-full bg-slate-700/50 flex items-center justify-center">
+                                                            <XCircle className="w-3 h-3 text-rose-500" />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="col-span-3 p-3 flex justify-center opacity-40 group-hover:opacity-100 transition-opacity">
-                                                    <div className="w-5 h-5 rounded-full bg-slate-700/50 flex items-center justify-center">
-                                                        <XCircle className="w-3 h-3 text-rose-500" />
-                                                    </div>
-                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* 3. ADDITIONAL FEATURES / ROI CARD */}
+                                <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative overflow-hidden">
+                                    <h3 className="text-lg font-bold text-slate-900 mb-4">Investment ROI</h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {[
+                                            { label: "Production Increase", val: "+45%", desc: "vs standard manual machines" },
+                                            { label: "Labor Saving", val: "60%", desc: "Return on investment in < 8 months" },
+                                            { label: "Power Efficiency", val: "A++", desc: "IE3 Premium Efficiency Motors" },
+                                            { label: "Maintenance", val: "Zero", desc: "Lubrication-free bearings" }
+                                        ].map((stat, i) => (
+                                            <div key={i} className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-emerald-300 transition-all">
+                                                <div className="text-3xl font-black text-slate-900 mb-1">{stat.val}</div>
+                                                <div className="text-xs font-bold text-slate-500 uppercase mb-1">{stat.label}</div>
+                                                <div className="text-[10px] text-slate-400">{stat.desc}</div>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
                             </div>
-
-                            {/* 3. ADDITIONAL FEATURES / ROI CARD */}
-                            <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative overflow-hidden">
-                                <h3 className="text-lg font-bold text-slate-900 mb-4">Investment ROI</h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {[
-                                        { label: "Production Increase", val: "+45%", desc: "vs standard manual machines" },
-                                        { label: "Labor Saving", val: "60%", desc: "Return on investment in < 8 months" },
-                                        { label: "Power Efficiency", val: "A++", desc: "IE3 Premium Efficiency Motors" },
-                                        { label: "Maintenance", val: "Zero", desc: "Lubrication-free bearings" }
-                                    ].map((stat, i) => (
-                                        <div key={i} className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-emerald-300 transition-all">
-                                            <div className="text-3xl font-black text-slate-900 mb-1">{stat.val}</div>
-                                            <div className="text-xs font-bold text-slate-500 uppercase mb-1">{stat.label}</div>
-                                            <div className="text-[10px] text-slate-400">{stat.desc}</div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </div></div>
                 </div>
             </section>
 
