@@ -60,7 +60,7 @@ export default function Header() {
                             </button>
 
                             {/* Dropdown Menu */}
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-300">
+                            <div className="absolute top-full left-0 pt-6 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-300">
                                 <div className="w-72 rounded-2xl overflow-hidden p-2">
                                     <Link
                                         href="/fabric-processing"
