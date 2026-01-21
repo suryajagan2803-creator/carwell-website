@@ -11,14 +11,14 @@ export default function Hero() {
             {/* Background Image with Slow Zoom (Ken Burns Effect) */}
             <div className="absolute inset-0 z-0 select-none">
                 <Image
-                    src="/img/fabric_machines_banner.png"
+                    src="/img/cardwell_hero_bold.png"
                     alt="Textile Processing Machinery"
                     fill
                     className="object-cover transform scale-100 hover:scale-105 transition-transform duration-[20s] ease-linear origin-center"
                     priority
                 />
-                {/* Elegant Gradient overlays for depth and readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-50/95 via-slate-50/70 to-transparent/10" />
+                {/* Elegant Gradient overlays for depth and readability - Reduced opacity for clarity */}
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/40 to-transparent/10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-50/50 to-transparent" />
             </div>
 
