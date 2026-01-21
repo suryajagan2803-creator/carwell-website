@@ -106,7 +106,7 @@ export default function AboutPage() {
                                         <h3 className="font-bold text-slate-900">Global Standards</h3>
                                     </div>
                                     <p className="text-slate-500 text-sm leading-relaxed">
-                                        We are ISO 9001:2015 certified. Our machines are CE marked and exported to over 30 countries, complying with rigorous safety and performance norms.
+                                        Our machines are exported to over 30 countries, complying with rigorous operational performance norms.
                                     </p>
                                 </div>
                                 <div className="bg-slate-50 p-6 border border-slate-100 hover:border-emerald-200 transition-colors">

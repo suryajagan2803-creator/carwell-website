@@ -64,9 +64,10 @@ function FeaturedCard({ product }: { product: any }) {
 export default function FeaturedProducts() {
     // Select specific products for the homepage
     const featuredDocs = [
-        'tubular-fabric-reversing-machine',
+        'tubular-fabric-bio-wash-reversing-machine',
+        'open-width-inspection-machine',
+        'tubular-fabric-inspection-machine',
         'automatic-roll-packing-machine',
-        'fabric-relaxation-machine',
         'apron-doffing-device'
     ];
 
@@ -96,7 +97,7 @@ export default function FeaturedProducts() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                     {featuredItems.map((product, index) => (
                         <FeaturedCard key={index} product={product} />
                     ))}
