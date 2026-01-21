@@ -302,8 +302,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                                 </div>
                             </div>
 
-                            {/* OLD CONTENT HIDDEN */}
-                            <div className="hidden">
+                            {/* RESTORED CONTENT: VISUAL & DATA DEEP DIVE */}
+                            <div className="space-y-8">
 
                                 {/* 1. VISUAL COMPARISON CARD */}
                                 <div className="bg-slate-900 rounded-3xl p-1 overflow-hidden shadow-2xl">
