@@ -29,30 +29,57 @@ export const products: Product[] = [
     // FABRIC PROCESSING PRODUCTS (Sample of the 18)
     {
         id: "tubular-fabric-bio-wash-reversing-machine",
-        name: "Tubular Fabric Reversing Machine (Bio-Wash)",
+        name: "Tubular Knitted Fabric Reversing Machine",
         category: "Fabric Processing",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        description: "Engineered specifically for the rigorous demands of bio-wash finishing units. This high-torque reversing machine effortlessly handles wet, heavy tubular fabrics without causing abrasion marks or elongation. Key for preparing fabrics for dyeing or compacting processes.",
-        highlights: ["Handles Wet/Heavy Fabrics", "Optical Twist Detection", "Zero-Abrasion Design", "High Torque Gearbox"],
+        tagline: "Controlled Reversing for Tubular Knitted Fabrics",
+        description: "The Tubular Knitted Fabric Reversing Machine is engineered to reverse tubular knitted fabrics smoothly and safely. Similar in function to tubular reversing machines from Suntech Machine, this machine ensures correct fabric orientation with minimal tension, preparing the fabric for inspection, finishing, or compaction.",
+        introBullets: [
+            "Smooth tubular fabric reversing mechanism",
+            "PLC controlled operation",
+            "Low tension fabric handling to prevent distortion",
+            "Uniform fabric flow"
+        ],
+        highlights: ["Fabric Safe", "PLC Controlled", "Low Tension", "Robust Build"],
         specs: [
-            { label: "Working Width", value: "36 to 48 inches" },
-            { label: "Operating Speed", value: "Up to 80 m/min (Variable)" },
-            { label: "Loading Capacity", value: "500kg per batch" },
-            { label: "Power Consumption", value: "3.5 HP with VFD" },
-            { label: "Construction", value: "SS 304 (Corrosion Resistant)" },
+            { label: "Fabric Type", value: "Tubular knitted fabrics" },
+            { label: "Operation", value: "Fabric reversing" },
+            { label: "Drive System", value: "Motor / servo assisted" },
+            { label: "Control System", value: "PLC controlled" },
+            { label: "Fabric Handling", value: "Low-tension reversing" },
+            { label: "Operation Mode", value: "Continuous" },
+            { label: "Application", value: "Dry & finishing processes" },
         ],
         features: [
-            { title: "Smart Untwisting", description: "Dual optical sensors instantly detect twist direction and correct it pneumatically.", icon: "Scan" },
-            { title: "Air-Cushion Loading", description: "Uses airflow to assist fabric loading, reducing friction and manual effort by 70%.", icon: "Wind" },
-            { title: "Wet-Process Ready", description: "Sealed bearings and waterproof controls designed for high-humidity dye house environments.", icon: "Droplets" },
-            { title: "Tension Control", description: "Synchronized feed system prevents fabric elongation during reversing.", icon: "Activity" },
+            { title: "Smooth Reversing", description: "Smooth tubular fabric reversing mechanism.", icon: "RefreshCw" },
+            { title: "PLC Control", description: "PLC controlled operation for reliability.", icon: "Cpu" },
+            { title: "Low Tension", description: "Low tension fabric handling to prevent distortion.", icon: "Activity" },
+            { title: "Uniform Flow", description: "Uniform fabric flow during operation.", icon: "Wind" },
+            { title: "Construction", description: "Robust mechanical construction.", icon: "Shield" },
+        ],
+        advancedFeatures: [
+            {
+                title: "Advanced Capabilities",
+                description: "Benchmark-aligned features for high performance.",
+                items: [
+                    "Adjustable fabric diameter handling",
+                    "Stable reversing speed control",
+                    "Integration with inspection and finishing lines",
+                    "Designed to reduce manual handling"
+                ]
+            }
+        ],
+        whyChooseUs: [
+            "Fabric-safe reversing design",
+            "Reliable performance for knitted fabrics",
+            "Easy integration with downstream machines",
+            "Competitive investment compared to imports"
         ],
         comparison: [
-            { feature: "Wet Fabric Handling", cardwell: "Optimized (High Torque)", market: "Struggles/Slips", advantage: true },
-            { feature: "Operator Fatigue", cardwell: "Low (Pneumatic Assist)", market: "High (Manual Pull)", advantage: true },
-            { feature: "Throughput", cardwell: "1.5 Tonnes/Shift", market: "0.8 Tonnes/Shift", advantage: true },
-            { feature: "Maintenance", cardwell: "Sealed/Lubed for Life", market: "Daily Greasing", advantage: true },
+            { feature: "Fabric Safety", cardwell: "High", market: "Medium", advantage: true },
+            { feature: "Tension Control", cardwell: "Optimized", market: "Variable", advantage: true },
+            { feature: "Integration", cardwell: "Easy", market: "Complex", advantage: true },
         ]
     },
     {
@@ -364,15 +391,58 @@ export const products: Product[] = [
     },
     {
         id: "fabric-meter-folding",
-        name: "Fabric Meter Folding Machine",
+        name: "Woven Fabric Folding Machine (Meter / Yard Type)",
         category: "Fabric Folding",
         image: "/img/comber.png",
         video: "/videos/demo.mp4",
-        description: "Folds fabric into meter lengths for retail or packing.",
-        highlights: ["Accurate folding", "Speed", "Counter"],
-        specs: [{ label: "Fold Length", value: "1 meter" }, { label: "Speed", value: "Manual/Auto" }],
-        features: [{ title: "Accuracy", description: "Standardized fold lengths.", icon: "Hash" }],
-        comparison: [{ feature: "Accuracy", cardwell: "High", market: "Medium", advantage: true }]
+        tagline: "Accurate Length Folding for Woven Fabrics",
+        description: "The Woven Fabric Folding Machine (Meter / Yard Type) is designed for precise length-based folding of woven fabrics. Comparable to industry-standard woven folding machines offered by Suntech Machine, this machine ensures accurate measurement, uniform folding, and smooth fabric handling for packing and dispatch.",
+        introBullets: [
+            "Accurate meter / yard length measurement",
+            "PLC controlled folding operation",
+            "Uniform and repeatable fabric stacks",
+            "Smooth fabric flow without edge distortion"
+        ],
+        highlights: ["Accurate Measurement", "PLC Controlled", "Uniform Folding", "Heavy Duty"],
+        specs: [
+            { label: "Fabric Type", value: "Woven fabrics" },
+            { label: "Folding Type", value: "Meter / Yard length folding" },
+            { label: "Measurement System", value: "Encoder / digital length measurement" },
+            { label: "Drive System", value: "Motor driven" },
+            { label: "Control System", value: "PLC controlled" },
+            { label: "Operation", value: "Continuous folding" },
+            { label: "Fabric Handling", value: "Low tension, damage-free" },
+        ],
+        features: [
+            { title: "Accurate Measurement", description: "Accurate meter / yard length measurement.", icon: "Ruler" },
+            { title: "PLC Control", description: "PLC controlled folding operation.", icon: "Cpu" },
+            { title: "Uniform Stacks", description: "Uniform and repeatable fabric stacks.", icon: "Layers" },
+            { title: "Smooth Flow", description: "Smooth fabric flow without edge distortion.", icon: "Wind" },
+            { title: "Durability", description: "Heavy-duty frame for continuous industrial use.", icon: "Shield" },
+        ],
+        advancedFeatures: [
+            {
+                title: "Advanced Capabilities",
+                description: "Benchmark-aligned performance.",
+                items: [
+                    "Adjustable folding length settings",
+                    "Consistent stack alignment for packing",
+                    "Production counter support",
+                    "Integration-ready with inspection machines"
+                ]
+            }
+        ],
+        whyChooseUs: [
+            "Precision folding comparable to global brands",
+            "Designed for Indian production environments",
+            "Simple operation and low maintenance",
+            "Cost-effective alternative to imported machines"
+        ],
+        comparison: [
+            { feature: "Accuracy", cardwell: "High (Encoder)", market: "Medium", advantage: true },
+            { feature: "Maintenance", cardwell: "Low", market: "High", advantage: true },
+            { feature: "Cost Effectiveness", cardwell: "High", market: "Medium", advantage: true },
+        ]
     },
     {
         id: "fabric-pallet-folding",
