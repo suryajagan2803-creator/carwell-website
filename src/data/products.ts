@@ -199,15 +199,31 @@ export const products: Product[] = [
     },
     {
         id: "woven-fabric-inspection",
-        name: "Woven Fabric Inspection Machine",
+        name: "Woven Fabric Inspection Machine (Roll-to-Roll)",
         category: "Fabric Inspection",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        description: "Robust inspection machine specifically designed for woven fabrics.",
-        highlights: ["Backlight", "Defect Mapping", "Fabric Handling"],
-        specs: [{ label: "Application", value: "Woven" }, { label: "Speed", value: "0-60 m/min" }],
-        features: [{ title: "Clarity", description: "Optimized lighting for weave defects.", icon: "Eye" }],
-        comparison: [{ feature: "Handling", cardwell: "Gentle", market: "Standard", advantage: true }]
+        description: "Engineered to deliver accurate defect detection, smooth fabric handling, and scalable automation for modern textile units. Designed with modular optional systems, allows manufacturers to start lean and scale seamlessly as production grows. Ensures consistent fabric quality through precision roll-to-roll inspection.",
+        highlights: ["Precision Inspection", "Modular Automation", "Scalable Design", "Industry 4.0 Ready"],
+        specs: [
+            { label: "Inspection Type", value: "Roll-to-Roll" },
+            { label: "Fabric Type", value: "Woven Fabrics" },
+            { label: "Operation Mode", value: "Manual / Semi-Auto / Auto" },
+            { label: "Roll Handling", value: "Forward & Reverse" },
+            { label: "Upgrade Capability", value: "Fully Modular" },
+        ],
+        features: [
+            { title: "Cleaning System", description: "Integrated brushing unit with 3 HP dust collection filter box removes lint/dust.", icon: "Sparkles" },
+            { title: "Auto Feed System", description: "Power unwinder with reserve roll table and auto-lifting mechanism reduces manual labor.", icon: "Wind" },
+            { title: "Data Management", description: "Digital weighing cradle with Ethernet connectivity for real-time ERP data transfer.", icon: "Database" },
+            { title: "Auto Handling", description: "Automatic roll transport and lifting conveyors for seamless material flow.", icon: "Activity" },
+        ],
+        comparison: [
+            { feature: "Rejection Rate", cardwell: "Minimal (<1%)", market: "Standard (3-5%)", advantage: true },
+            { feature: "ROI Period", cardwell: "12-24 Months", market: "36+ Months", advantage: true },
+            { feature: "Labor Efficiency", cardwell: "High (Auto Feed)", market: "Low (Manual)", advantage: true },
+            { feature: "Cleanliness", cardwell: "Active Dust Removal", market: "None", advantage: true },
+        ]
     },
     {
         id: "coated-fabric-inspection",

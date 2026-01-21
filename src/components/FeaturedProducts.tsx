@@ -64,9 +64,9 @@ function FeaturedCard({ product }: { product: any }) {
 export default function FeaturedProducts() {
     // Select specific products for the homepage
     const featuredDocs = [
+        'woven-fabric-inspection',
         'tubular-fabric-bio-wash-reversing-machine',
         'open-width-inspection-machine',
-        'tubular-fabric-inspection-machine',
         'automatic-roll-packing-machine',
         'apron-doffing-device'
     ];
