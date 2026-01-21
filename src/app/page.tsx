@@ -12,6 +12,9 @@ import Innovation from "@/components/Innovation";
 
 import ContactSection from "@/components/ContactSection";
 
+import Testimonials from "@/components/Testimonials";
+import LatestProjects from "@/components/LatestProjects";
+
 export default function Home() {
   return (
     <main className="min-h-screen font-sans">
@@ -23,6 +26,8 @@ export default function Home() {
       <CategorySection />
       <Services />
       <Innovation />
+      <LatestProjects />
+      <Testimonials />
       <GlobalReach />
       <ContactSection />
       <Footer />
