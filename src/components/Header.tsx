@@ -61,7 +61,7 @@ export default function Header() {
 
                             {/* Dropdown Menu */}
                             <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-300">
-                                <div className="bg-white w-72 border border-slate-100 rounded-2xl shadow-2xl overflow-hidden p-2 ring-1 ring-slate-900/5">
+                                <div className="bg-white/80 backdrop-blur-xl w-72 border border-slate-100 rounded-2xl shadow-2xl overflow-hidden p-2 ring-1 ring-slate-900/5">
                                     <Link
                                         href="/fabric-processing"
                                         className="block p-4 rounded-xl transition-colors group/link"
