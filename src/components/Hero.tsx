@@ -12,7 +12,7 @@ export default function Hero() {
             <div className="absolute inset-0 z-0 pointer-events-none">
                 {/* Blurred subtle industrial mech */}
                 <Image
-                    src="/img/hero_industrial_daylight.png"
+                    src="/img/fabric_machines_banner.png"
                     alt="Background"
                     fill
                     className="object-cover opacity-5 blur-xl"
