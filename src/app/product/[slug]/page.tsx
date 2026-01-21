@@ -389,34 +389,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                 </div>
             </section>
 
-            {/* E. DEPLOYMENT TIMELINE */}
-            <section className="py-32 bg-white text-slate-900 relative overflow-hidden">
-                <div className="absolute top-1/2 left-0 w-full h-px bg-slate-100 hidden md:block" />
 
-                <div className="container mx-auto px-6 md:px-8 text-center mb-20 relative z-10">
-                    <span className="text-primary font-bold text-xs tracking-widest uppercase mb-4 block bg-white px-4 inline-block">Process</span>
-                    <h2 className="text-3xl md:text-4xl font-extrabold bg-white px-4 inline-block tracking-tight">Deployment Roadmap</h2>
-                </div>
-
-                <div className="container mx-auto px-6 md:px-8 max-w-6xl relative z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {[
-                            { step: "01", title: "Consultation", desc: "Requirements gathering & site audit" },
-                            { step: "02", title: "Customization", desc: "Machine calibration to specs" },
-                            { step: "03", title: "Installation", desc: "Field engineer deployment (5-7 Days)" },
-                            { step: "04", title: "Go Live", desc: "Training & production ramp-up" }
-                        ].map((item, i) => (
-                            <div key={i} className="group relative bg-white p-8 rounded-[2rem] border border-slate-100 hover:border-emerald-200 hover:-translate-y-2 transition-all shadow-lg shadow-slate-200/20 hover:shadow-xl hover:shadow-emerald-500/10">
-                                <div className="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center font-bold text-emerald-600 mb-6 mx-auto md:mx-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                    {item.step}
-                                </div>
-                                <h3 className="font-bold text-xl mb-3 text-center md:text-left text-slate-900">{item.title}</h3>
-                                <p className="text-sm text-slate-500 font-medium text-center md:text-left leading-relaxed">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* --- 3. FINAL CTA --- */}
             <section className="py-24 bg-[#0F172A] relative overflow-hidden">
