@@ -22,6 +22,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
     // State for carousel
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+    const [showComparisonVideo, setShowComparisonVideo] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
 
     // Prepare slides array, including video if available
@@ -248,9 +249,20 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                         {/* RIGHT: WHY CHOOSE CARDWELL */}
                         <div className="lg:col-span-8 space-y-8">
                             {/* Section Header */}
-                            <div className="text-left">
-                                <h2 className="text-3xl font-black text-slate-900 mb-2">Why Choose Cardwell?</h2>
-                                <p className="text-slate-500 font-medium">Engineered for performance, safety, and long-term value.</p>
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                                <div>
+                                    <h2 className="text-3xl font-black text-slate-900 mb-2">Why Choose Cardwell?</h2>
+                                    <p className="text-slate-500 font-medium">Engineered for performance, safety, and long-term value.</p>
+                                </div>
+                                <button
+                                    onClick={() => setShowComparisonVideo(true)}
+                                    className="group flex items-center gap-3 px-5 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm shadow-xl hover:bg-emerald-600 transition-all hover:scale-105 active:scale-95"
+                                >
+                                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white text-emerald-400 group-hover:text-emerald-600 transition-colors">
+                                        <PlayCircle className="w-4 h-4 fill-current" />
+                                    </div>
+                                    <span>Watch Comparison</span>
+                                </button>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -392,6 +404,51 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                                         ))}
                                     </div>
                                 </div>
+
+                                {/* 4. DEPLOYMENT ROADMAP (New Section) */}
+                                <div className="bg-[#0F172A] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-transparent opacity-50"></div>
+                                    <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-emerald-500 pl-4">Deployment Roadmap</h3>
+
+                                    <div className="relative border-l border-slate-700/50 ml-4 space-y-8">
+                                        {/* Step 1 */}
+                                        <div className="relative pl-8 group">
+                                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-emerald-500 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)] group-hover:scale-125 transition-transform"></div>
+                                            <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">Week 1</div>
+                                            <h4 className="text-lg font-bold text-white mb-2">Site Inspection & Layout</h4>
+                                            <p className="text-slate-400 text-sm leading-relaxed">
+                                                Our engineers analyze your floor plan and utility points to design the optimal machine placement for workflow efficiency.
+                                            </p>
+                                        </div>
+                                        {/* Step 2 */}
+                                        <div className="relative pl-8 group">
+                                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-slate-600 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
+                                            <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Week 2-3</div>
+                                            <h4 className="text-lg font-bold text-white mb-2">Installation & Cabling</h4>
+                                            <p className="text-slate-400 text-sm leading-relaxed">
+                                                Mechanical setup followed by electrical integration using industry-standard safety protocols.
+                                            </p>
+                                        </div>
+                                        {/* Step 3 */}
+                                        <div className="relative pl-8 group">
+                                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-slate-600 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
+                                            <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Week 4</div>
+                                            <h4 className="text-lg font-bold text-white mb-2">Calibration & Trials</h4>
+                                            <p className="text-slate-400 text-sm leading-relaxed">
+                                                Running pilot lots with your specific fabric types to fine-tune tension, speed, and overfeed settings.
+                                            </p>
+                                        </div>
+                                        {/* Step 4 */}
+                                        <div className="relative pl-8 group">
+                                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-slate-600 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
+                                            <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Handover</div>
+                                            <h4 className="text-lg font-bold text-white mb-2">Training & Live Run</h4>
+                                            <p className="text-slate-400 text-sm leading-relaxed">
+                                                Comprehensive training for your operators and maintenance team, ensuring confident autonomous operation.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div></div>
                 </div>
@@ -481,6 +538,55 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             </section>
 
             <Footer />
+            {/* VIDEO COMPARISON MODAL */}
+            {showComparisonVideo && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md animate-fade-in" onClick={() => setShowComparisonVideo(false)}>
+                    <div className="bg-[#0F172A] w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl border border-slate-700 relative" onClick={e => e.stopPropagation()}>
+
+                        <button
+                            className="absolute top-4 right-4 z-50 p-2 bg-slate-800 rounded-full text-slate-400 hover:text-white hover:bg-red-500 transition-colors"
+                            onClick={() => setShowComparisonVideo(false)}
+                        >
+                            <XCircle className="w-8 h-8" />
+                        </button>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 h-[80vh] md:h-[70vh]">
+                            {/* LEFT: STANDARD */}
+                            <div className="relative h-full border-r border-slate-700 bg-black flex flex-col justify-center items-center group">
+                                <div className="absolute top-6 left-6 z-20 bg-red-500/20 text-red-400 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-bold border border-red-500/30 uppercase tracking-widest">
+                                    Standard Market
+                                </div>
+                                {/* Placeholder Video (Reusing demo for now but grayscale) */}
+                                <video
+                                    src="/videos/demo.mp4"
+                                    className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale"
+                                    autoPlay loop muted playsInline
+                                />
+                                <div className="relative z-10 text-center p-8 bg-black/50 w-full backdrop-blur-[2px]">
+                                    <h3 className="text-2xl font-bold text-white mb-2">Labor Intensive</h3>
+                                    <p className="text-slate-300">Requires constant manual intervention and monitoring.</p>
+                                </div>
+                            </div>
+
+                            {/* RIGHT: CARDWELL */}
+                            <div className="relative h-full bg-black flex flex-col justify-center items-center group">
+                                <div className="absolute top-6 right-6 z-20 bg-emerald-500 text-white px-6 py-2 rounded-full text-xs font-bold border border-emerald-400 uppercase tracking-widest shadow-lg shadow-emerald-500/20">
+                                    Cardwell Tech
+                                </div>
+                                <video
+                                    src="/videos/demo.mp4"
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                    autoPlay loop muted playsInline
+                                />
+                                <div className="absolute bottom-10 inset-x-0 text-center p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
+                                    <h3 className="text-3xl font-black text-white mb-2">Automated Precision</h3>
+                                    <p className="text-emerald-400 font-medium">Zero-touch reversing process with AI monitoring.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }
