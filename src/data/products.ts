@@ -376,15 +376,69 @@ export const products: Product[] = [
     },
     {
         id: "fabric-pallet-folding",
-        name: "Fabric Pallet Folding Machine",
+        name: "Pallet Folding Machine (Servo Driven | PLC Controlled)",
         category: "Fabric Folding",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        description: "Large scale folding machine for palletizing fabrics.",
-        highlights: ["Heavy Duty", "Pallet Output", "High production"],
-        specs: [{ label: "Pallet Size", value: "Standard" }, { label: "Stack Height", value: "Max 2m" }],
-        features: [{ title: "Efficiency", description: "Prepares fabric directly for shipping.", icon: "Activity" }],
-        comparison: [{ feature: "Throughput", cardwell: "High", market: "Medium", advantage: true }]
+        tagline: "High-Speed Fabric Folding. Precision Control. Export-Ready Output.",
+        description: "The Pallet Folding Machine is designed for accurate, uniform, and high-speed folding of woven fabrics directly into pallets. Built with servo-driven motion and PLC control, this machine ensures consistent folding quality while significantly reducing manual handling and labor dependency.",
+        introBullets: [
+            "Produces perfectly aligned fabric pallets",
+            "Suitable for export-oriented fabric units",
+            "Reduces manpower and folding errors",
+            "Ensures uniform fabric presentation & packing"
+        ],
+        highlights: ["Servo Driven", "PLC Controlled", "High Precision", "Export Quality"],
+        specs: [
+            { label: "Machine Type", value: "Pallet Folding Machine" },
+            { label: "Fabric Type", value: "Woven fabric" },
+            { label: "Folding Type", value: "Pallet folding" },
+            { label: "Drive Mechanism", value: "Servo driven" },
+            { label: "Control", value: "PLC control system" },
+            { label: "Folding Accuracy", value: "High precision" },
+            { label: "Production Mode", value: "Continuous" },
+        ],
+        features: [
+            { title: "Precision Folding", description: "Servo-driven folding for precise fabric placement.", icon: "Minimize" },
+            { title: "Reliability", description: "PLC-controlled operation for repeatability & reliability.", icon: "ShieldCheck" },
+            { title: "Gentle Handling", description: "Smooth fabric movement without tension damage.", icon: "Activity" },
+            { title: "Durability", description: "Heavy-duty structure for long working hours.", icon: "Shield" },
+        ],
+        advancedFeatures: [
+            {
+                title: "Advanced Capabilities",
+                description: "High-speed synchronized folding cycles.",
+                items: ["Uniform pallet height and alignment", "Reduced fabric edge distortion", "Ideal for integration with inspection & packing lines"]
+            }
+        ],
+        whyChooseUs: [
+            "Machines engineered for real shop-floor conditions",
+            "Focus on reliability, accuracy, and serviceability",
+            "Modular integration with upstream & downstream machines",
+            "Transparent pricing and long-term support"
+        ],
+        cardwellDifference: [
+            { advantage: "Servo + PLC technology", benefit: "Higher accuracy & control" },
+            { advantage: "Robust mechanical design", benefit: "Long machine life" },
+            { advantage: "Consistent pallet output", benefit: "Better packing & export quality" },
+            { advantage: "Low maintenance design", benefit: "Reduced operating cost" }
+        ],
+        roi: {
+            benefits: ["Faster pallet preparation", "Reduced manual folding labor", "Improved packing efficiency", "Lower fabric handling damage"],
+            highlights: ["Faster turnaround time", "Reduced manpower cost", "Improved consistency for bulk orders"],
+            period: "12–18 months (depending on volume)"
+        },
+        industries: [
+            "Textile Mills",
+            "Fabric Processing Units",
+            "Export Fabric Manufacturers",
+            "Warehousing & Packing Units"
+        ],
+        comparison: [
+            { feature: "Folding Accuracy", cardwell: "High (Servo)", market: "Avg (Mechanical)", advantage: true },
+            { feature: "Throughput", cardwell: "High", market: "Medium", advantage: true },
+            { feature: "Labor Req.", cardwell: "Minimal", market: "High", advantage: true },
+        ]
     },
     {
         id: "apron-doffing-device",
