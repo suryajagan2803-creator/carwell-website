@@ -154,66 +154,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {/* --- 2. DEEP DIVE SECTIONS (Sequential Layout) --- */}
 
             {/* A. ADVANCED FEATURES (Compact Tech Grid) */}
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-6 md:px-8">
-                    <div className="flex flex-col md:flex-row items-end justify-between mb-10 gap-6">
-                        <div>
-                            <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">Core Architecture</span>
-                            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">System Capabilities</h2>
-                        </div>
-                        <p className="text-slate-500 text-sm max-w-md text-right hidden md:block font-medium">
-                            Next-gen engineering compressed into a compact, high-efficiency footprint.
-                        </p>
-                    </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px]">
-                        {product.features.map((feature, i) => {
-                            const Icon = IconMap[feature.icon] || Activity;
-                            // Make the first item span 2 cols for variety
-                            const isLarge = i === 0;
-
-                            return (
-                                <div
-                                    key={i}
-                                    className={`
-                                        group relative rounded-2xl overflow-hidden border border-slate-100 bg-slate-50 hover:border-emerald-500/30 transition-all duration-500
-                                        ${isLarge ? 'col-span-2 row-span-2 md:col-span-2 md:row-span-2' : 'col-span-1 row-span-1'}
-                                    `}
-                                >
-                                    {/* Hover Gradient Background */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/0 to-emerald-500/0 group-hover:from-emerald-500/5 group-hover:to-emerald-500/10 transition-all duration-500" />
-
-                                    <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
-                                        <div className="flex justify-between items-start">
-                                            <div className={`
-                                                rounded-xl flex items-center justify-center text-slate-600 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm
-                                                ${isLarge ? 'w-14 h-14 bg-white' : 'w-10 h-10 bg-white'}
-                                            `}>
-                                                <Icon className={isLarge ? "w-7 h-7" : "w-5 h-5"} />
-                                            </div>
-                                            <ArrowRight className="w-4 h-4 text-slate-300 -rotate-45 group-hover:rotate-0 group-hover:text-emerald-500 transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                                        </div>
-
-                                        <div>
-                                            <h3 className={`font-bold text-slate-900 mb-2 leading-tight ${isLarge ? 'text-2xl' : 'text-sm'}`}>
-                                                {feature.title}
-                                            </h3>
-                                            <p className={`text-slate-500 font-medium leading-relaxed transition-all duration-500 ${isLarge ? 'text-sm line-clamp-3' : 'text-[10px] opacity-0 group-hover:opacity-100 h-0 group-hover:h-auto'}`}>
-                                                {feature.description}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Decorative Tech Lines */}
-                                    <div className="absolute bottom-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
-                                        <Icon className="w-24 h-24 transform -rotate-12 translate-x-4 translate-y-4" />
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </section>
 
             {/* B. & C. SCROLLING "ROLLING" LAYOUT: FIXED SPECS + SCROLLING FEATURES */}
             <section className="py-12 bg-slate-50 border-b border-slate-200">
@@ -405,50 +346,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                                     </div>
                                 </div>
 
-                                {/* 4. DEPLOYMENT ROADMAP (New Section) */}
-                                <div className="bg-[#0F172A] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
-                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-transparent opacity-50"></div>
-                                    <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-emerald-500 pl-4">Deployment Roadmap</h3>
 
-                                    <div className="relative border-l border-slate-700/50 ml-4 space-y-8">
-                                        {/* Step 1 */}
-                                        <div className="relative pl-8 group">
-                                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-emerald-500 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)] group-hover:scale-125 transition-transform"></div>
-                                            <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">Week 1</div>
-                                            <h4 className="text-lg font-bold text-white mb-2">Site Inspection & Layout</h4>
-                                            <p className="text-slate-400 text-sm leading-relaxed">
-                                                Our engineers analyze your floor plan and utility points to design the optimal machine placement for workflow efficiency.
-                                            </p>
-                                        </div>
-                                        {/* Step 2 */}
-                                        <div className="relative pl-8 group">
-                                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-slate-600 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
-                                            <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Week 2-3</div>
-                                            <h4 className="text-lg font-bold text-white mb-2">Installation & Cabling</h4>
-                                            <p className="text-slate-400 text-sm leading-relaxed">
-                                                Mechanical setup followed by electrical integration using industry-standard safety protocols.
-                                            </p>
-                                        </div>
-                                        {/* Step 3 */}
-                                        <div className="relative pl-8 group">
-                                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-slate-600 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
-                                            <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Week 4</div>
-                                            <h4 className="text-lg font-bold text-white mb-2">Calibration & Trials</h4>
-                                            <p className="text-slate-400 text-sm leading-relaxed">
-                                                Running pilot lots with your specific fabric types to fine-tune tension, speed, and overfeed settings.
-                                            </p>
-                                        </div>
-                                        {/* Step 4 */}
-                                        <div className="relative pl-8 group">
-                                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-slate-600 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
-                                            <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Handover</div>
-                                            <h4 className="text-lg font-bold text-white mb-2">Training & Live Run</h4>
-                                            <p className="text-slate-400 text-sm leading-relaxed">
-                                                Comprehensive training for your operators and maintenance team, ensuring confident autonomous operation.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div></div>
                 </div>
