@@ -67,7 +67,7 @@ export default function FeaturedProducts() {
         'woven-fabric-inspection',
         'fabric-pallet-folding',
         'fabric-meter-folding',
-        'tubular-fabric-bio-wash-reversing-machine',
+        'tubular-fabric-reversing-machine',
         'open-width-inspection-machine',
         'tubular-bio-wash-reversing'
     ];

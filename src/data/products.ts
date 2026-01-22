@@ -43,10 +43,13 @@ export const products: Product[] = [
         ],
         highlights: ["Bio-Wash Ready", "Low-Tension", "PLC Controlled", "Wet Process Safe"],
         specs: [
-            { label: "Fabric Type", value: "Tubular knitted fabrics (post bio-wash)" },
-            { label: "Function", value: "Fabric reversing" },
-            { label: "Control System", value: "PLC controlled" },
-            { label: "Operation", value: "Continuous reversing process" },
+            { label: "Fabric type", value: "Tubular knitted (bio-washed / wet)" },
+            { label: "Operation", value: "Post bio-wash fabric reversing" },
+            { label: "Drive system", value: "Motor / Servo assisted" },
+            { label: "Control system", value: "PLC controlled" },
+            { label: "Fabric handling", value: "Low tension, wet-safe" },
+            { label: "Power requirement", value: "Approx. 5–7 kW" },
+            { label: "Machine weight", value: "Approx. 1600–2300 kg" },
         ],
         features: [
             { title: "Wet Fabric Handling", description: "Low-tension reversing suitable for wet fabrics.", icon: "Droplets" },
@@ -95,7 +98,7 @@ export const products: Product[] = [
         ]
     },
     {
-        id: "tubular-fabric-bio-wash-reversing-machine",
+        id: "tubular-fabric-reversing-machine",
         name: "Tubular Knitted Fabric Reversing Machine",
         category: "Fabric Processing",
         image: "/img/draw-frame.png",
@@ -503,13 +506,13 @@ export const products: Product[] = [
         ],
         highlights: ["Accurate Measurement", "PLC Controlled", "Uniform Folding", "Heavy Duty"],
         specs: [
-            { label: "Fabric Type", value: "Woven fabrics" },
-            { label: "Folding Type", value: "Meter / Yard length folding" },
-            { label: "Measurement System", value: "Encoder / digital length measurement" },
-            { label: "Drive System", value: "Motor driven" },
-            { label: "Control System", value: "PLC controlled" },
-            { label: "Operation", value: "Continuous folding" },
-            { label: "Fabric Handling", value: "Low tension, damage-free" },
+            { label: "Fabric type", value: "Woven fabrics" },
+            { label: "Folding mode", value: "Meter / Yard based" },
+            { label: "Measurement system", value: "Encoder / digital measurement" },
+            { label: "Control system", value: "PLC controlled" },
+            { label: "Folding speed", value: "Adjustable" },
+            { label: "Power requirement", value: "Approx. 3–5 kW" },
+            { label: "Machine weight", value: "Approx. 1000–1600 kg" },
         ],
         features: [
             { title: "Accurate Measurement", description: "Accurate meter / yard length measurement.", icon: "Ruler" },
