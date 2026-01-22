@@ -33,54 +33,65 @@ export const products: Product[] = [
         category: "Fabric Processing",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        tagline: "Controlled Reversing for Tubular Knitted Fabrics",
-        description: "The Tubular Knitted Fabric Reversing Machine is engineered to reverse tubular knitted fabrics smoothly and safely. Similar in function to tubular reversing machines from Suntech Machine, this machine ensures correct fabric orientation with minimal tension, preparing the fabric for inspection, finishing, or compaction.",
+        tagline: "Low-Tension Reversing | PLC Controlled | Process-Ready Handling",
+        description: "The Tubular Knitted Fabric Reversing Machine is designed to reverse tubular knitted fabrics smoothly and safely, ensuring correct fabric orientation for downstream processes. The machine delivers stable, low-tension fabric flow, comparable to industry-standard machines from Suntech Machine.",
         introBullets: [
-            "Smooth tubular fabric reversing mechanism",
-            "PLC controlled operation",
-            "Low tension fabric handling to prevent distortion",
-            "Uniform fabric flow"
+            "Ensures correct tubular fabric orientation",
+            "Prevents twisting, stretching, and fabric damage",
+            "Improves efficiency of inspection and finishing processes",
+            "Reduces manual handling and rework"
         ],
-        highlights: ["Fabric Safe", "PLC Controlled", "Low Tension", "Robust Build"],
+        highlights: ["Low-Tension", "PLC Controlled", "Continuous Process", "Process-Ready"],
         specs: [
             { label: "Fabric Type", value: "Tubular knitted fabrics" },
-            { label: "Operation", value: "Fabric reversing" },
-            { label: "Drive System", value: "Motor / servo assisted" },
+            { label: "Machine Function", value: "Fabric reversing" },
             { label: "Control System", value: "PLC controlled" },
-            { label: "Fabric Handling", value: "Low-tension reversing" },
+            { label: "Drive System", value: "Motor / servo assisted" },
+            { label: "Fabric Handling", value: "Low tension" },
             { label: "Operation Mode", value: "Continuous" },
-            { label: "Application", value: "Dry & finishing processes" },
+            { label: "Integration", value: "Inspection & finishing lines" },
         ],
         features: [
             { title: "Smooth Reversing", description: "Smooth tubular fabric reversing mechanism.", icon: "RefreshCw" },
             { title: "PLC Control", description: "PLC controlled operation for reliability.", icon: "Cpu" },
-            { title: "Low Tension", description: "Low tension fabric handling to prevent distortion.", icon: "Activity" },
-            { title: "Uniform Flow", description: "Uniform fabric flow during operation.", icon: "Wind" },
-            { title: "Construction", description: "Robust mechanical construction.", icon: "Shield" },
+            { title: "Low Tension", description: "Low-tension fabric handling to prevent distortion.", icon: "Activity" },
+            { title: "Stable Flow", description: "Uniform and stable fabric flow.", icon: "Wind" },
+            { title: "Construction", description: "Heavy-duty industrial construction.", icon: "Shield" },
         ],
         advancedFeatures: [
             {
                 title: "Advanced Capabilities",
-                description: "Benchmark-aligned features for high performance.",
+                description: "Features for continuous production environments.",
                 items: [
                     "Adjustable fabric diameter handling",
-                    "Stable reversing speed control",
-                    "Integration with inspection and finishing lines",
-                    "Designed to reduce manual handling"
+                    "Controlled reversing speed",
+                    "Integration with compaction, bio-wash, and finishing lines",
+                    "Designed for continuous production environments"
                 ]
             }
         ],
         whyChooseUs: [
-            "Fabric-safe reversing design",
-            "Reliable performance for knitted fabrics",
-            "Easy integration with downstream machines",
-            "Competitive investment compared to imports"
+            "Machines engineered for knitted fabric behavior",
+            "Reliable performance under shop-floor conditions",
+            "Easy integration with existing production lines",
+            "Strong local service and technical support"
         ],
         cardwellDifference: [
-            { advantage: "Fabric-safe Design", benefit: "Zero distortion or damage" },
-            { advantage: "Competitive Investment", benefit: "Faster ROI than imports" },
-            { advantage: "Easy Integration", benefit: "Seamless inspection line setup" },
-            { advantage: "Local Support", benefit: "Quick service response" }
+            { advantage: "Fabric-safe design", benefit: "No distortion or damage" },
+            { advantage: "PLC controlled system", benefit: "Consistent and repeatable operation" },
+            { advantage: "Robust build quality", benefit: "Long service life" },
+            { advantage: "Cost-effective solution", benefit: "Value alternative to imports" }
+        ],
+        roi: {
+            benefits: ["Reduced fabric damage", "Improved downstream efficiency", "Lower labor dependency"],
+            highlights: ["Faster production flow", "Reduced reprocessing losses"],
+            period: "10–16 months (depending on usage)"
+        },
+        industries: [
+            "Knitting units",
+            "Dyeing and finishing plants",
+            "Bio-wash units",
+            "Garment manufacturing units"
         ],
         comparison: [
             { feature: "Fabric Safety", cardwell: "High", market: "Medium", advantage: true },
