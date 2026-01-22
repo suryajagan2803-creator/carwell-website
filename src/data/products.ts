@@ -28,6 +28,72 @@ export type Product = {
 export const products: Product[] = [
     // FABRIC PROCESSING PRODUCTS (Sample of the 18)
     {
+        id: "tubular-bio-wash-reversing",
+        name: "Tubular Knitted Fabric Bio-Wash Reversing Machine",
+        category: "Fabric Processing",
+        image: "/img/draw-frame.png",
+        video: "/videos/demo.mp4",
+        tagline: "Bio-Wash Compatible | Low-Tension Handling | PLC Controlled",
+        description: "The Tubular Knitted Fabric Bio-Wash Reversing Machine is designed to reverse tubular knitted fabrics after bio-wash processing, ensuring correct fabric orientation with minimum tension and no distortion. The machine is engineered to deliver industry-standard reversing performance, comparable to machines offered by Suntech Machine, while being optimized for wet and treated fabric conditions.",
+        introBullets: [
+            "Designed specifically for bio-washed / wet tubular fabrics",
+            "Prevents fabric twisting, stretch, and surface damage",
+            "Improves efficiency of inspection and finishing processes",
+            "Reduces manual handling of treated fabrics"
+        ],
+        highlights: ["Bio-Wash Ready", "Low-Tension", "PLC Controlled", "Wet Process Safe"],
+        specs: [
+            { label: "Fabric Type", value: "Tubular knitted fabrics (post bio-wash)" },
+            { label: "Function", value: "Fabric reversing" },
+            { label: "Control System", value: "PLC controlled" },
+            { label: "Operation", value: "Continuous reversing process" },
+        ],
+        features: [
+            { title: "Wet Fabric Handling", description: "Low-tension reversing suitable for wet fabrics.", icon: "Droplets" },
+            { title: "PLC Control", description: "PLC controlled operation for stable performance.", icon: "Cpu" },
+            { title: "Uniform Flow", description: "Smooth and uniform fabric flow.", icon: "Wind" },
+            { title: "Robust Build", description: "Heavy-duty construction for finishing environments.", icon: "Shield" },
+        ],
+        advancedFeatures: [
+            {
+                title: "Comparison with Industry-Standard Machines",
+                description: "Optimized for bio-wash compatibility.",
+                items: [
+                    "Corrosion-resistant design for wet processing",
+                    "Fabric safety in wet conditions",
+                    "Cost-effective alternative to imported machines"
+                ]
+            }
+        ],
+        whyChooseUs: [
+            "Machines engineered for Indian dyeing & finishing conditions",
+            "Focus on fabric protection after bio-wash",
+            "Easy integration with existing finishing lines",
+            "Faster service and local technical support"
+        ],
+        cardwellDifference: [
+            { advantage: "Fabric-safe design", benefit: "No distortion or damage" },
+            { advantage: "PLC controlled system", benefit: "Consistent and repeatable operation" },
+            { advantage: "Robust build quality", benefit: "Long service life" },
+            { advantage: "Cost-effective solution", benefit: "Value alternative to imports" }
+        ],
+        roi: {
+            benefits: ["Reduced fabric damage after bio-wash", "Improved downstream process flow", "Lower reprocessing and handling losses"],
+            highlights: ["Faster production flow", "Reduced reprocessing losses"],
+            period: "10–18 months (based on production usage)"
+        },
+        industries: [
+            "Dyeing & bio-wash plants",
+            "Knitting units",
+            "Fabric finishing units",
+            "Garment manufacturing facilities"
+        ],
+        comparison: [
+            { feature: "Wet Handling", cardwell: "Optimized", market: "Standard", advantage: true },
+            { feature: "Corrosion Res.", cardwell: "High", market: "Medium", advantage: true },
+            { feature: "Cost", cardwell: "Competitive", market: "High", advantage: true },
+        ]
+    }, {
         id: "tubular-fabric-bio-wash-reversing-machine",
         name: "Tubular Knitted Fabric Reversing Machine",
         category: "Fabric Processing",

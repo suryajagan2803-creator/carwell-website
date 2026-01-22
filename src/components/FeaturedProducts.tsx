@@ -68,7 +68,8 @@ export default function FeaturedProducts() {
         'fabric-pallet-folding',
         'fabric-meter-folding',
         'tubular-fabric-bio-wash-reversing-machine',
-        'open-width-inspection-machine'
+        'open-width-inspection-machine',
+        'tubular-bio-wash-reversing'
     ];
 
     const featuredItems = products.filter(p => featuredDocs.includes(p.id));
@@ -97,7 +98,7 @@ export default function FeaturedProducts() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
                     {featuredItems.map((product, index) => (
                         <FeaturedCard key={index} product={product} />
                     ))}
