@@ -335,30 +335,32 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                         </div>
 
                         {/* E. INDUSTRIES & COMPARISON */}
-                        <div className="mb-20">
-                            <h3 className="text-center text-2xl font-bold text-slate-900 mb-8">Why Cardwell Stands Out</h3>
-                            <div className="overflow-x-auto">
-                                <table className="w-full border-collapse">
-                                    <thead>
-                                        <tr className="bg-slate-50 border-b border-slate-200">
-                                            <th className="p-4 text-left text-xs font-bold text-slate-500 uppercase tracking-widest">Cardwell Advantage</th>
-                                            <th className="p-4 text-left text-xs font-bold text-slate-500 uppercase tracking-widest">Customer Benefit</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100">
-                                        {product.cardwellDifference?.map((row, i) => (
-                                            <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                                <td className="p-4 font-bold text-slate-900">{row.advantage}</td>
-                                                <td className="p-4 text-slate-600 flex items-center gap-2">
-                                                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                                                    {row.benefit}
-                                                </td>
+                        {product.cardwellDifference && (
+                            <div className="mb-20">
+                                <h3 className="text-center text-2xl font-bold text-slate-900 mb-8">Why Cardwell Stands Out</h3>
+                                <div className="overflow-x-auto">
+                                    <table className="w-full border-collapse">
+                                        <thead>
+                                            <tr className="bg-slate-50 border-b border-slate-200">
+                                                <th className="p-4 text-left text-xs font-bold text-slate-500 uppercase tracking-widest">Cardwell Advantage</th>
+                                                <th className="p-4 text-left text-xs font-bold text-slate-500 uppercase tracking-widest">Customer Benefit</th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100">
+                                            {product.cardwellDifference.map((row, i) => (
+                                                <tr key={i} className="hover:bg-slate-50/50 transition-colors">
+                                                    <td className="p-4 font-bold text-slate-900">{row.advantage}</td>
+                                                    <td className="p-4 text-slate-600 flex items-center gap-2">
+                                                        <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                                                        {row.benefit}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </section>
                 </div>
             ) : (

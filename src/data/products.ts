@@ -76,6 +76,12 @@ export const products: Product[] = [
             "Easy integration with downstream machines",
             "Competitive investment compared to imports"
         ],
+        cardwellDifference: [
+            { advantage: "Fabric-safe Design", benefit: "Zero distortion or damage" },
+            { advantage: "Competitive Investment", benefit: "Faster ROI than imports" },
+            { advantage: "Easy Integration", benefit: "Seamless inspection line setup" },
+            { advantage: "Local Support", benefit: "Quick service response" }
+        ],
         comparison: [
             { feature: "Fabric Safety", cardwell: "High", market: "Medium", advantage: true },
             { feature: "Tension Control", cardwell: "Optimized", market: "Variable", advantage: true },
@@ -437,6 +443,12 @@ export const products: Product[] = [
             "Designed for Indian production environments",
             "Simple operation and low maintenance",
             "Cost-effective alternative to imported machines"
+        ],
+        cardwellDifference: [
+            { advantage: "Accurate Measurement", benefit: "Reduced giveaway and wastage" },
+            { advantage: "Robust Build", benefit: "Designed for continuous industrial usage" },
+            { advantage: "Simple Operation", benefit: "No specialized labor needed" },
+            { advantage: "Import Alternative", benefit: "World-class quality at local price" }
         ],
         comparison: [
             { feature: "Accuracy", cardwell: "High (Encoder)", market: "Medium", advantage: true },
