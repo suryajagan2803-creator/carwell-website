@@ -174,46 +174,67 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
                             {/* Intro Bullets */}
-                            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
-                                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                                    <CheckCircle2 className="w-6 h-6 text-emerald-500" /> Why This Machine?
-                                </h3>
-                                <ul className="space-y-4">
-                                    {product.introBullets?.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-slate-700 font-medium">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                            {/* Intro Bullets - Tech Cards */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                                {product.introBullets?.map((item, i) => (
+                                    <div key={i} className="group relative bg-white p-6 rounded-2xl border border-slate-100 overflow-hidden hover:border-emerald-500/30 transition-all hover:shadow-lg hover:shadow-emerald-500/10">
+                                        <div className="absolute top-0 left-0 w-1 h-full bg-slate-200 group-hover:bg-emerald-500 transition-colors" />
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-emerald-50 transition-colors">
+                                                <div className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-emerald-500 transition-colors ring-2 ring-white" />
+                                            </div>
+                                            <p className="text-slate-600 font-medium text-sm leading-relaxed group-hover:text-slate-900 transition-colors">
+                                                {item}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
 
-                            {/* Variants Table */}
+                            {/* Variants Table - Data Terminal Style */}
                             {product.variants && (
-                                <div className="rounded-3xl border border-slate-200 overflow-hidden">
-                                    <div className="bg-slate-900 text-white p-4 font-bold text-sm uppercase tracking-wider text-center">Machine Variants</div>
+                                <div className="rounded-3xl border border-slate-200 overflow-hidden bg-white shadow-xl shadow-slate-200/50">
+                                    <div className="bg-[#0F172A] text-white p-5 flex items-center justify-between border-b border-slate-800">
+                                        <div className="flex items-center gap-3">
+                                            <Grid className="w-5 h-5 text-emerald-500" />
+                                            <span className="font-bold text-sm uppercase tracking-widest">Available Configurations</span>
+                                        </div>
+                                        <div className="text-[10px] bg-slate-800 px-2 py-1 rounded text-slate-400 font-mono">
+                                            {product.variants.length} MODELS
+                                        </div>
+                                    </div>
                                     <div className="divide-y divide-slate-100">
                                         {product.variants.map((v, i) => (
-                                            <div key={i} className="p-4 bg-white flex flex-col gap-2 hover:bg-slate-50 transition-colors">
-                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                                    <span className="font-bold text-emerald-700 text-sm whitespace-nowrap">{v.model}</span>
-                                                    <span className="text-xs text-slate-500 font-bold uppercase">{v.description}</span>
+                                            <div key={i} className="group p-6 hover:bg-slate-50 transition-all duration-300 relative overflow-hidden">
+                                                {/* Hover Highlight Line */}
+                                                <div className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                                                    <div className="flex items-center gap-3">
+                                                        <span className="text-xs font-black text-slate-300 font-mono">{(i + 1).toString().padStart(2, '0')}</span>
+                                                        <span className="font-bold text-slate-900 text-lg group-hover:text-emerald-700 transition-colors">{v.model}</span>
+                                                    </div>
+                                                    <span className="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-colors">
+                                                        {v.description}
+                                                    </span>
                                                 </div>
+
                                                 {v.items && (
-                                                    <ul className="pl-4 mt-2 space-y-1 border-l-2 border-emerald-100">
+                                                    <div className="pl-9 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                                                         {v.items.map((item, j) => (
-                                                            <li key={j} className="text-xs text-slate-600 leading-relaxed pl-2 relative">
-                                                                <span className="absolute left-[-17px] top-1.5 w-1 h-1 rounded-full bg-emerald-400"></span>
+                                                            <div key={j} className="flex items-center gap-2 text-sm text-slate-500 group-hover:text-slate-700">
+                                                                <div className="w-1 h-1 rounded-full bg-slate-300 group-hover:bg-emerald-400" />
                                                                 {item}
-                                                            </li>
+                                                            </div>
                                                         ))}
-                                                    </ul>
+                                                    </div>
                                                 )}
                                             </div>
                                         ))}
                                     </div>
                                 </div>
                             )}
+
                         </div>
 
                         {/* B. SPECS & CORE FEATURES */}
@@ -256,31 +277,66 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                         <div className="mb-20">
                             <h3 className="text-2xl font-bold text-slate-900 mb-10 text-center">Advanced & Optional Features</h3>
                             <div className="space-y-12">
-                                {product.advancedFeatures.map((af, i) => (
-                                    <div key={i} className="flex flex-col md:flex-row gap-8 items-center bg-slate-50 rounded-[2.5rem] p-8 border border-slate-200">
-                                        <div className="w-full md:w-1/2">
-                                            <div className="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-2">Feature Focus</div>
-                                            <h4 className="text-2xl font-black text-slate-900 mb-4">{af.title}</h4>
-                                            <p className="text-slate-600 mb-6 font-medium">{af.description}</p>
-                                            {af.items && (
-                                                <ul className="space-y-3">
-                                                    {af.items.map((item, j) => (
-                                                        <li key={j} className="flex items-center gap-3 text-sm text-slate-700">
-                                                            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                                                            {item}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </div>
-                                        <div className="w-full md:w-1/2 h-64 bg-slate-200 rounded-2xl overflow-hidden relative">
-                                            {/* Placeholder for feature image */}
-                                            <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center text-slate-400 font-bold uppercase tracking-widest">
-                                                {af.title} Visual
+                                <div className="space-y-8">
+                                    {product.advancedFeatures.map((af, i) => (
+                                        <div key={i} className="group relative bg-[#0F172A] rounded-[2.5rem] p-1 overflow-hidden shadow-2xl hover:shadow-emerald-500/10 transition-shadow">
+                                            {/* Glowing border effect */}
+                                            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                                            <div className="relative bg-[#0F172A] rounded-[2.3rem] p-8 md:p-12 overflow-hidden">
+                                                {/* Background tech elements */}
+                                                <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
+                                                <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
+
+                                                <div className="flex flex-col lg:flex-row gap-12 items-center relative z-10">
+                                                    <div className="w-full lg:w-3/5">
+                                                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
+                                                            <Cpu className="w-3 h-3" /> System Architecture
+                                                        </div>
+
+                                                        <h4 className="text-3xl font-black text-white mb-6 leading-tight">
+                                                            {af.title}
+                                                        </h4>
+
+                                                        <p className="text-slate-400 text-lg mb-8 leading-relaxed font-light">
+                                                            {af.description}
+                                                        </p>
+
+                                                        {af.items && (
+                                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                                {af.items.map((item, j) => (
+                                                                    <div key={j} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-emerald-500/30 transition-all group/item">
+                                                                        <div className="mt-1 w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 group-hover/item:bg-emerald-500 group-hover/item:text-white transition-all text-emerald-400">
+                                                                            <CheckCircle2 className="w-3 h-3" />
+                                                                        </div>
+                                                                        <span className="text-sm font-medium text-slate-300 group-hover/item:text-white transition-colors">
+                                                                            {item}
+                                                                        </span>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        )}
+                                                    </div>
+
+                                                    {/* Visual Side */}
+                                                    <div className="w-full lg:w-2/5 aspect-video md:aspect-square relative rounded-3xl overflow-hidden border border-slate-700/50 bg-black/50 backdrop-blur-sm shadow-inner shadow-black group-hover:shadow-emerald-900/20 transition-all">
+                                                        <div className="absolute inset-0 bg-[url('/img/grid.svg')] opacity-20" />
+                                                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                                                            <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-slate-800 to-slate-700 flex items-center justify-center shadow-xl mb-6 group-hover:scale-110 transition-transform duration-500 border border-slate-600">
+                                                                <Activity className="w-10 h-10 text-emerald-500 animate-pulse" />
+                                                            </div>
+                                                            <div className="text-slate-500 font-mono text-xs uppercase tracking-widest mb-2">System Status</div>
+                                                            <div className="text-white font-bold text-lg">Operational</div>
+                                                        </div>
+
+                                                        {/* Scanning Line Animation */}
+                                                        <div className="absolute top-0 left-0 w-full h-[2px] bg-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.5)] animate-scan opacity-50" />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </div>
 
@@ -300,34 +356,57 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                             </div>
 
                             {/* ROI */}
+                            {/* ROI - Command Center Style */}
                             {product.roi && (
-                                <div className="bg-[#0F172A] rounded-3xl p-8 text-white relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-                                    <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Investment & ROI</h3>
+                                <div className="bg-[#0F172A] rounded-3xl p-1 overflow-hidden shadow-2xl relative">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-transparent opacity-50" />
 
-                                    <div className="mb-8 relative z-10">
-                                        <div className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Typical ROI Period</div>
-                                        <div className="text-4xl font-black text-emerald-400">{product.roi.period}</div>
-                                    </div>
+                                    <div className="bg-[#0F172A] rounded-[1.3rem] p-8 relative overflow-hidden h-full flex flex-col">
+                                        {/* Background Grid */}
+                                        <div className="absolute inset-0 bg-[url('/img/grid.svg')] opacity-10" />
+                                        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
-                                    <div className="space-y-6 relative z-10">
-                                        <div>
-                                            <strong className="block text-white mb-2">Key Benefits</strong>
-                                            <div className="flex flex-wrap gap-2">
-                                                {product.roi.benefits.map((b, i) => (
-                                                    <span key={i} className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">{b}</span>
-                                                ))}
+                                        <div className="flex items-center gap-3 mb-8 relative z-10 border-b border-slate-800 pb-4">
+                                            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
+                                                <BarChart3 className="w-5 h-5 text-emerald-400" />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-xl font-bold text-white leading-none">Investment Intelligence</h3>
+                                                <span className="text-[10px] text-emerald-500 font-mono uppercase tracking-widest">ROI Projector v2.1</span>
                                             </div>
                                         </div>
-                                        <div>
-                                            <strong className="block text-white mb-2">Financial Highlights</strong>
-                                            <ul className="space-y-2">
-                                                {product.roi.highlights.map((h, i) => (
-                                                    <li key={i} className="flex items-center gap-2 text-sm text-slate-300">
-                                                        <ArrowRight className="w-3 h-3 text-emerald-500" /> {h}
-                                                    </li>
-                                                ))}
-                                            </ul>
+
+                                        <div className="mb-8 relative z-10 flex-grow">
+                                            <div className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Estimated Break-even</div>
+                                            <div className="text-5xl font-black text-white tracking-tight mb-2">
+                                                {product.roi.period}
+                                            </div>
+                                            <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
+                                                <div className="h-full bg-emerald-500 w-3/4 animate-pulse rounded-full" />
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-6 relative z-10">
+                                            <div>
+                                                <strong className="text-slate-300 text-xs uppercase tracking-widest block mb-3">Performance Gains</strong>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {product.roi.benefits.map((b, i) => (
+                                                        <span key={i} className="px-3 py-1.5 bg-slate-800/50 backdrop-blur-sm rounded-lg text-xs font-medium text-emerald-300 border border-emerald-500/20 flex items-center gap-2">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                                            {b}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
+                                                <ul className="space-y-2">
+                                                    {product.roi.highlights.map((h, i) => (
+                                                        <li key={i} className="flex items-center gap-2 text-xs text-slate-400 font-mono">
+                                                            <ChevronRight className="w-3 h-3 text-emerald-500" /> {h}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
