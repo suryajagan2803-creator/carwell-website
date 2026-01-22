@@ -93,104 +93,139 @@ export const products: Product[] = [
             { feature: "Corrosion Res.", cardwell: "High", market: "Medium", advantage: true },
             { feature: "Cost", cardwell: "Competitive", market: "High", advantage: true },
         ]
-    }, {
+    },
+    {
         id: "tubular-fabric-bio-wash-reversing-machine",
         name: "Tubular Knitted Fabric Reversing Machine",
         category: "Fabric Processing",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        tagline: "Low-Tension Reversing | PLC Controlled | Process-Ready Handling",
-        description: "The Tubular Knitted Fabric Reversing Machine is designed to reverse tubular knitted fabrics smoothly and safely, ensuring correct fabric orientation for downstream processes. The machine delivers stable, low-tension fabric flow, comparable to industry-standard machines from Suntech Machine.",
+        tagline: "Damage-Free Reversing for Knitted Fabrics",
+        description: "The Tubular Knitted Fabric Reversing Machine is designed to reverse tubular knitted fabrics smoothly, ensuring correct orientation without stretching or distortion.",
         introBullets: [
-            "Ensures correct tubular fabric orientation",
-            "Prevents twisting, stretching, and fabric damage",
-            "Improves efficiency of inspection and finishing processes",
-            "Reduces manual handling and rework"
+            "Prevents fabric twisting and damage",
+            "Improves downstream processing efficiency",
+            "Reduces manual fabric handling"
         ],
-        highlights: ["Low-Tension", "PLC Controlled", "Continuous Process", "Process-Ready"],
+        highlights: ["Fabric Safe", "Low Tension", "PLC Controlled", "Fast Reversing"],
         specs: [
-            { label: "Fabric Type", value: "Tubular knitted fabrics" },
-            { label: "Machine Function", value: "Fabric reversing" },
-            { label: "Control System", value: "PLC controlled" },
-            { label: "Drive System", value: "Motor / servo assisted" },
-            { label: "Fabric Handling", value: "Low tension" },
-            { label: "Operation Mode", value: "Continuous" },
-            { label: "Integration", value: "Inspection & finishing lines" },
+            { label: "Fabric type", value: "Tubular knitted fabrics" },
+            { label: "Operation", value: "Fabric reversing" },
+            { label: "Drive system", value: "Motor / Servo assisted" },
+            { label: "Control system", value: "PLC controlled" },
+            { label: "Fabric handling", value: "Low tension" },
+            { label: "Operating speed", value: "Adjustable" },
+            { label: "Power requirement", value: "Approx. 4–6 kW" },
+            { label: "Machine weight", value: "Approx. 1400–2000 kg" },
         ],
         features: [
-            { title: "Smooth Reversing", description: "Smooth tubular fabric reversing mechanism.", icon: "RefreshCw" },
-            { title: "PLC Control", description: "PLC controlled operation for reliability.", icon: "Cpu" },
-            { title: "Low Tension", description: "Low-tension fabric handling to prevent distortion.", icon: "Activity" },
-            { title: "Stable Flow", description: "Uniform and stable fabric flow.", icon: "Wind" },
-            { title: "Construction", description: "Heavy-duty industrial construction.", icon: "Shield" },
+            { title: "Low-Tension Reversing", description: "Low-tension reversing mechanism.", icon: "Activity" },
+            { title: "Stable Operation", description: "Stable and continuous operation.", icon: "Shield" },
+            { title: "Uniform Flow", description: "Uniform fabric flow.", icon: "Wind" },
+            { title: "Robust Build", description: "Robust mechanical construction.", icon: "Box" },
         ],
         advancedFeatures: [
             {
                 title: "Advanced Capabilities",
-                description: "Features for continuous production environments.",
+                description: "Optimize your process.",
                 items: [
-                    "Adjustable fabric diameter handling",
-                    "Controlled reversing speed",
-                    "Integration with compaction, bio-wash, and finishing lines",
-                    "Designed for continuous production environments"
+                    "Adjustable fabric diameter support",
+                    "Speed control for different fabric types",
+                    "Integration with inspection and finishing lines"
                 ]
             }
         ],
         whyChooseUs: [
-            "Machines engineered for knitted fabric behavior",
-            "Reliable performance under shop-floor conditions",
-            "Easy integration with existing production lines",
-            "Strong local service and technical support"
+            "Designed specifically for delicate knitted fabrics",
+            "Reduces fabric waste from handling damage",
+            "Simple, reliable operation",
+            "Compact footprint available"
         ],
         cardwellDifference: [
-            { advantage: "Fabric-safe design", benefit: "No distortion or damage" },
-            { advantage: "PLC controlled system", benefit: "Consistent and repeatable operation" },
-            { advantage: "Robust build quality", benefit: "Long service life" },
-            { advantage: "Cost-effective solution", benefit: "Value alternative to imports" }
+            { advantage: "Low Tension", benefit: "No fabric shape distortion" },
+            { advantage: "Efficiency", benefit: "Replaces manual turning completely" },
+            { advantage: "Flexibility", benefit: "Handles various fabric diameters" },
+            { advantage: "Value", benefit: "Rapid ROI through labor savings" }
         ],
         roi: {
-            benefits: ["Reduced fabric damage", "Improved downstream efficiency", "Lower labor dependency"],
-            highlights: ["Faster production flow", "Reduced reprocessing losses"],
-            period: "10–16 months (depending on usage)"
+            benefits: ["Eliminated manual labor for reversing", "Zero fabric damage", "Improved inspection speed"],
+            highlights: ["Fast labor ROI", "Higher quality output"],
+            period: "6–12 months"
         },
         industries: [
             "Knitting units",
-            "Dyeing and finishing plants",
-            "Bio-wash units",
-            "Garment manufacturing units"
+            "Finishing and compaction lines"
         ],
         comparison: [
             { feature: "Fabric Safety", cardwell: "High", market: "Medium", advantage: true },
-            { feature: "Tension Control", cardwell: "Optimized", market: "Variable", advantage: true },
-            { feature: "Integration", cardwell: "Easy", market: "Complex", advantage: true },
+            { feature: "Throughput", cardwell: "Continuous", market: "Batch/Manual", advantage: true },
+            { feature: "Tension", cardwell: "Low", market: "High", advantage: true },
         ]
     },
     {
         id: "open-width-inspection-machine",
-        name: "Open Width Fabric Inspection Machine",
+        name: "Open Width Knitted Fabric Inspection Machine (Roll-to-Roll)",
         category: "Fabric Inspection",
         image: "/img/speed-frame.png",
         video: "/videos/demo.mp4",
-        description: "The industry standard for final quality control of woven and high-value knitted fabrics. Designed with ‘Zero-Tension’ logic to handle delicate fabrics like Lycra, Viscose, and Modal without stretching. Includes data logging capabilities for ERP integration.",
-        highlights: ["Relaxed Fabric Feed", "ERP Data Integration", "Edge-to-Edge Alignment", "Full Width Illumination"],
+        tagline: "Full-Surface Visibility for Quality Control",
+        description: "The Open Width Knitted Fabric Inspection Machine allows full-surface inspection of knitted fabrics in open width form, helping identify defects clearly before cutting or finishing.",
+        introBullets: [
+            "Full open-width defect visibility",
+            "Improved quality control",
+            "Reduced downstream rejection"
+        ],
+        highlights: ["Full Visibility", "Open Width", "Quality Control", "Defect Detection"],
         specs: [
-            { label: "Roller Width", value: "72 to 96 inches" },
-            { label: "Inspection Speed", value: "0-60 m/min (Inverter Drive)" },
-            { label: "Lighting", value: "Top & Bottom (Variable Lux)" },
-            { label: "Edge Control", value: "Hydraulic / Electronic Sensor" },
-            { label: "Counter Accuracy", value: "+/- 0.1%" },
+            { label: "Fabric type", value: "Knitted fabrics (open width)" },
+            { label: "Inspection mode", value: "Roll-to-roll" },
+            { label: "Working width", value: "As per fabric width" },
+            { label: "Drive system", value: "Motor / Servo assisted" },
+            { label: "Control system", value: "Operator / PLC" },
+            { label: "Inspection speed", value: "Adjustable" },
+            { label: "Power requirement", value: "Approx. 4–6 kW" },
+            { label: "Machine weight", value: "Approx. 1300–2000 kg" },
         ],
         features: [
-            { title: "Defect Mapping", description: "Operators can tag defects digitally, generating a roll map for cutting optimization.", icon: "Map" },
-            { title: "Tensionless Loop", description: "Input J-Scray accumulator ensures fabric is inspecting in a completely relaxed state.", icon: "Minimize" },
-            { title: "Visual Clarity", description: "High-CRI LED lighting ensures accurate color matching and defect visibility.", icon: "Eye" },
-            { title: "Perfect Rolling", description: "Automatic edge guiding system ensures perfectly straight cylindrical rolls for shipping.", icon: "Box" },
+            { title: "Wide Lighting", description: "Wide inspection lighting for full coverage.", icon: "Sun" },
+            { title: "Smooth Transport", description: "Smooth fabric transport without tension.", icon: "Wind" },
+            { title: "Accurate Tracking", description: "Accurate length tracking.", icon: "Ruler" },
+        ],
+        advancedFeatures: [
+            {
+                title: "Advanced Capabilities",
+                description: "Enhance inspection quality.",
+                items: [
+                    "Edge alignment system",
+                    "Data logging and inspection records"
+                ]
+            }
+        ],
+        whyChooseUs: [
+            "Absolute visibility of fabric defects",
+            "Tension-free handling for sensitive knits",
+            "Easy to operate control system",
+            "Robust design for factory environments"
+        ],
+        cardwellDifference: [
+            { advantage: "Lighting Quality", benefit: "No missed defects" },
+            { advantage: "Fabric Handling", benefit: "No edge curling or stretching" },
+            { advantage: "Data", benefit: "Traceable quality records" },
+            { advantage: "Ergonomics", benefit: "Reduced operator fatigue" }
+        ],
+        roi: {
+            benefits: ["Reduced garment rejection", " Higher quality fabric rating", "Reduced customer returns"],
+            highlights: ["Quality assurance", "Brand reputation"],
+            period: "12–16 months"
+        },
+        industries: [
+            "Knitted fabric inspection",
+            "Garment and processing units"
         ],
         comparison: [
-            { feature: "Lycra Handling", cardwell: "Distortion Free", market: "Stretches/Bows", advantage: true },
-            { feature: "Defect Recording", cardwell: "Digital/Software", market: "Manual Paper", advantage: true },
-            { feature: "Edge Alignment", cardwell: "+/- 2mm", market: "+/- 10mm", advantage: true },
-            { feature: "Lighting lifespan", cardwell: "50,000 Hrs (LED)", market: "5,000 Hrs (Tube)", advantage: true },
+            { feature: "Visibility", cardwell: "Full Width", market: "Restricted", advantage: true },
+            { feature: "Tension", cardwell: "Zero", market: "Variable", advantage: true },
+            { feature: "Lighting", cardwell: "High CRI", market: "Standard", advantage: true },
         ]
     },
     {
@@ -322,94 +357,74 @@ export const products: Product[] = [
         category: "Fabric Inspection",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        tagline: "Precision Inspection. Modular Automation. Higher Fabric Quality.",
-        description: "Our Woven Fabric Inspection Machine (Roll-to-Roll) is engineered to deliver accurate defect detection, smooth fabric handling, and scalable automation for modern textile units. Designed with modular optional systems, this machine allows manufacturers to start lean and scale seamlessly as production grows.",
+        tagline: "Precision Defect Detection & Roll-to-Roll Efficiency",
+        description: "The Woven Fabric Inspection Machine (Roll-to-Roll) is designed to inspect woven fabrics for defects, length accuracy, and surface quality before further processing. It helps textile units improve quality control, reduce rejection, and maintain consistent fabric standards.",
         introBullets: [
-            "Ensures consistent fabric quality through roll-to-roll inspection",
-            "Reduces rejections, rework, and downstream losses",
-            "Modular design supports automation upgrades without replacing the base machine",
-            "Suitable for small units to large-scale processing plants"
+            "Early defect identification",
+            "Improved fabric quality assurance",
+            "Reduced rework and wastage",
+            "Suitable for continuous production environments"
         ],
-        highlights: ["Precision Inspection", "Modular Automation", "Scalable Design", "Industry 4.0 Ready"],
+        highlights: ["Defect Detection", "Roll-to-Roll", "Quality Assurance", "Continuous Process"],
         specs: [
-            { label: "Inspection Type", value: "Roll-to-Roll" },
-            { label: "Fabric Type", value: "Woven fabrics" },
-            { label: "Operation Mode", value: "Manual / Semi-Automatic / Automatic (Model based)" },
-            { label: "Roll Handling", value: "Forward & reverse inspection" },
-            { label: "Power Supply", value: "Industrial standard" },
-            { label: "Upgrade Capability", value: "Fully modular" },
-            { label: "Optional Automation", value: "Yes" },
-        ],
-        variants: [
-            { model: "ECO Model", description: "Cost-effective inspection solution for basic quality control" },
-            { model: "Standard Model", description: "Balanced performance with enhanced operational flexibility" },
-            { model: "Auto Draft Model", description: "Advanced inspection with higher automation & productivity" },
+            { label: "Fabric type", value: "Woven fabrics" },
+            { label: "Inspection mode", value: "Roll-to-roll" },
+            { label: "Working width", value: "As per customer requirement" },
+            { label: "Drive system", value: "Motor / Servo (variant based)" },
+            { label: "Control system", value: "Manual / PLC" },
+            { label: "Inspection speed", value: "Adjustable" },
+            { label: "Power requirement", value: "Approx. 3–6 kW" },
+            { label: "Machine weight", value: "Approx. 1200–2000 kg" },
         ],
         features: [
-            { title: "Inspection System", description: "Roll-to-roll fabric inspection system.", icon: "Eye" },
-            { title: "Tension Control", description: "Smooth fabric tension control.", icon: "Activity" },
-            { title: "Lighting", description: "Uniform inspection lighting.", icon: "Sun" },
-            { title: "Ergonomics", description: "Operator-friendly control layout.", icon: "User" },
-            { title: "Durability", description: "Heavy-duty frame for continuous operation.", icon: "Shield" },
-            { title: "Alignment", description: "Accurate roll alignment & rewinding.", icon: "Minimize" },
+            { title: "Smooth Movement", description: "Smooth roll-to-roll fabric movement.", icon: "Activity" },
+            { title: "Uniform Lighting", description: "Uniform inspection lighting for defect visibility.", icon: "Sun" },
+            { title: "Accurate Measurement", description: "Accurate fabric length measurement.", icon: "Ruler" },
+            { title: "Stable Tension", description: "Stable tension control during inspection.", icon: "Minimize" },
+            { title: "Industrial Build", description: "Heavy-duty industrial structure.", icon: "Shield" },
         ],
         advancedFeatures: [
             {
-                title: "Fabric Cleaning & Brushing System",
-                description: "Improves inspection accuracy by removing lint and dust.",
-                items: ["Integrated brushing unit", "Dust collection system with 3 HP filter box"]
-            },
-            {
-                title: "Automatic Fabric Roll Handling",
-                description: "Seamless material movement.",
-                items: ["Roll transport conveyors", "Lifting-type conveyor options (per meter)", "Automatic roll transfer between stations"]
-            },
-            {
-                title: "Auto Feed & Unwinding System",
-                description: "Reduces manual handling & labor dependency.",
-                items: ["Reserve roll table", "Auto lifting mechanism", "Power unwinder cradle"]
-            },
-            {
-                title: "Weighing & Data Management",
-                description: "Industry 4.0 ready data transfer.",
-                items: ["Fabric roll weighing cradle", "Digital display control unit", "Roll weight storage", "Data transfer via Ethernet cable"]
-            },
-            {
-                title: "Stretch Film Wrapping Unit",
-                description: "Professional packing finish.",
-                items: ["Automatic fabric roll wrapping", "Ensures safe handling & transport"]
+                title: "Advanced Capabilities",
+                description: "Enhance your inspection line.",
+                items: [
+                    "Fabric cleaning & brushing unit with dust collection",
+                    "3 HP filter box for lint removal",
+                    "Auto roll transport conveyors",
+                    "Reserve roll table with auto lifting",
+                    "Power unwinder cradle",
+                    "Fabric roll weighing cradle with digital display",
+                    "Ethernet-based data transfer",
+                    "Stretch film wrapping unit"
+                ]
             }
         ],
         whyChooseUs: [
-            "Decades of textile machinery engineering expertise",
-            "Machines designed for Indian & global production conditions",
-            "Transparent pricing & modular configuration",
-            "Faster service response and technical support",
-            "Custom-built solutions based on customer workflow"
+            "Decades of inspection machinery expertise",
+            "Customizable working widths",
+            "Robust design for 24/7 operation",
+            "Seamless integration with ERP systems"
         ],
         cardwellDifference: [
-            { advantage: "Modular machine design", benefit: "Lower initial investment" },
-            { advantage: "Optional automation", benefit: "Pay only for what you need" },
-            { advantage: "Industry 4.0 ready options", benefit: "Digital traceability" },
-            { advantage: "Robust build quality", benefit: "Long machine life" },
-            { advantage: "Local support", benefit: "Reduced downtime" }
+            { advantage: "Heavy-duty Frame", benefit: "Vibration-free inspection at high speeds" },
+            { advantage: "Modular Options", benefit: "Add features like brushing/weighing as needed" },
+            { advantage: "Local Support", benefit: "Quick maintenance and spare parts" },
+            { advantage: "Cost Efficiency", benefit: "Premium specs at competitive pricing" }
         ],
         roi: {
-            benefits: ["Lower fabric rejection rates", "Reduced labor costs", "Improved packing & handling efficiency", "Scalable automation without replacing machinery"],
-            highlights: ["Faster payback through quality improvement", "Reduced wastage & rework", "Higher throughput with automation", "Long-term operational savings"],
-            period: "12–24 months (based on production volume & selected options)"
+            benefits: ["Reduced material wastage", "Lower rejection rates downstream", "Improved customer satisfaction"],
+            highlights: ["Payback in < 18 months", "Significant quality upgrade"],
+            period: "12–18 months"
         },
         industries: [
-            "Textile Mills",
-            "Fabric Processing Units",
-            "Garment Manufacturers",
-            "Export-oriented Fabric Units"
+            "Textile mills",
+            "Fabric processing units",
+            "Export-oriented fabric manufacturers"
         ],
         comparison: [
-            { feature: "Rejection Rate", cardwell: "Minimal (<1%)", market: "Standard (3-5%)", advantage: true },
-            { feature: "ROI Period", cardwell: "12-24 Months", market: "36+ Months", advantage: true },
-            { feature: "Labor Efficiency", cardwell: "High (Auto Feed)", market: "Low (Manual)", advantage: true },
-            { feature: "Cleanliness", cardwell: "Active Dust Removal", market: "None", advantage: true },
+            { feature: "Defect Visibility", cardwell: "High CRI LED", market: "Standard Tube", advantage: true },
+            { feature: "Tension Stability", cardwell: "Servo Control", market: "Manual Break", advantage: true },
+            { feature: "Data Ready", cardwell: "Ethernet/IoT", market: "Offline", advantage: true },
         ]
     },
     {
@@ -535,94 +550,74 @@ export const products: Product[] = [
     },
     {
         id: "fabric-pallet-folding",
-        name: "Pallet Folding Machine (Servo Driven | PLC Controlled)",
+        name: "Pallet Folding Machine",
         category: "Fabric Folding",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
-        tagline: "Servo Driven | PLC Controlled | Export-Ready Folding",
-        description: "The Pallet Folding Machine is engineered for high-precision folding of woven fabrics into uniform pallets. With multiple variants, this machine allows textile manufacturers to select the right level of automation based on production volume, quality requirement, and investment plan.",
+        tagline: "Automated Precision for Uniform Fabric Pallets",
+        description: "The Pallet Folding Machine is used to fold woven fabrics into uniform pallets for easy handling, packing, and storage. The machine ensures consistent folding quality with minimal manual intervention.",
         introBullets: [
-            "Produces uniform, export-quality fabric pallets",
-            "Reduces manual folding and labor dependency",
-            "Ensures consistent fabric presentation",
-            "Improves packing efficiency and storage handling"
+            "Uniform pallet formation",
+            "Reduced manual folding effort",
+            "Improved packing and logistics efficiency"
         ],
-        highlights: ["Servo Driven", "PLC Controlled", "High Precision", "Export Quality"],
+        highlights: ["Uniform Folding", "Servo-Driven", "Labor Saving", "Compact Design"],
         specs: [
-            { label: "Fabric Type", value: "Woven fabrics" },
-            { label: "Folding Type", value: "Pallet folding" },
-            { label: "Control System", value: "PLC controlled" },
-            { label: "Drive System", value: "Servo driven (variant-based)" },
-            { label: "Pallet Size", value: "Fixed / Adjustable (variant-based)" },
-            { label: "Operating Mode", value: "Semi / Fully automatic" },
-            { label: "Upgrade Capability", value: "Yes" },
-        ],
-        variants: [
-            {
-                model: "Standard Model",
-                description: "Best suited for: Small to mid-scale production",
-                items: ["PLC controlled operation", "Semi-automatic pallet folding", "Fixed pallet size", "Reliable and cost-effective solution"]
-            },
-            {
-                model: "Servo Model",
-                description: "Best suited for: High-accuracy folding requirements",
-                items: ["Servo-driven folding system", "PLC with touch panel control", "Adjustable pallet dimensions", "Higher folding precision and speed"]
-            },
-            {
-                model: "High-Speed Servo Model",
-                description: "Best suited for: Large-scale & export-oriented units",
-                items: ["Multiple servo drives", "High-speed synchronized folding", "Automatic pallet positioning", "Continuous, high-output operation"]
-            }
+            { label: "Fabric type", value: "Woven fabrics" },
+            { label: "Folding type", value: "Pallet folding" },
+            { label: "Drive system", value: "Servo driven" },
+            { label: "Control system", value: "PLC controlled" },
+            { label: "Pallet size", value: "As per requirement" },
+            { label: "Folding speed", value: "Configurable" },
+            { label: "Power requirement", value: "Approx. 4–7 kW" },
+            { label: "Machine weight", value: "Approx. 1500–2200 kg" },
         ],
         features: [
-            { title: "Precision Folding", description: "Servo & PLC controlled precision folding.", icon: "Minimize" },
-            { title: "Fabric Handling", description: "Smooth fabric handling without distortion.", icon: "Activity" },
-            { title: "Consistency", description: "Consistent pallet formation.", icon: "Layers" },
-            { title: "Structure", description: "Heavy-duty mechanical structure.", icon: "Shield" },
-            { title: "Usage", description: "Operator-friendly interface.", icon: "User" },
+            { title: "Servo Mechanism", description: "Servo-driven folding mechanism.", icon: "Activity" },
+            { title: "PLC Operation", description: "PLC controlled operation for reliability.", icon: "Cpu" },
+            { title: "Consistency", description: "Consistent and repeatable folding.", icon: "Layers" },
+            { title: "Ease of Use", description: "Operator-friendly controls.", icon: "User" },
         ],
         advancedFeatures: [
             {
-                title: "Advanced & Optional Features",
-                description: "Enhance your line with these capabilities.",
+                title: "Advanced Capabilities",
+                description: "Enhance your folding line.",
                 items: [
-                    "Edge alignment system",
-                    "Automatic pallet loading & unloading",
-                    "Production counter & monitoring",
-                    "Integration with inspection & packing lines",
-                    "Safety interlocks and emergency stop systems"
+                    "Adjustable pallet dimensions",
+                    "Integration with inspection or packing lines",
+                    "Production counter and monitoring"
                 ]
             }
         ],
         whyChooseUs: [
-            "Proven expertise in textile machinery solutions",
-            "Machines designed for continuous industrial use",
-            "Custom configurations based on customer workflow",
-            "Reliable after-sales support"
+            "Consistent folding quality reduces manual errors",
+            "Significant labor cost reduction",
+            "High-speed operation boosts throughput",
+            "Robust design minimizes maintenance"
         ],
         cardwellDifference: [
-            { advantage: "Multiple machine variants", benefit: "Right investment for every scale" },
-            { advantage: "Servo-driven precision", benefit: "Consistent folding accuracy" },
-            { advantage: "Modular automation", benefit: "Easy future upgrades" },
-            { advantage: "Robust build quality", benefit: "Long service life" }
+            { advantage: "Servo Precision", benefit: "Perfectly aligned pallets every time" },
+            { advantage: "Speed", benefit: "30-40% faster than manual folding" },
+            { advantage: "Integration", benefit: "Seamlessly connects to packing lines" },
+            { advantage: "Durability", benefit: "Low downtime and long life" }
         ],
         roi: {
-            benefits: ["Reduced manpower cost", "Faster folding cycles", "Improved packing consistency", "Lower fabric handling losses"],
-            highlights: ["Faster payback through labor savings", "Increased throughput for bulk orders", "Improved customer acceptance for export consignments"],
-            period: "12–18 months (based on production volume)"
+            benefits: ["Reduced labor dependency", "Faster order dispatch", "Optimized warehouse space"],
+            highlights: ["High labor separation", "Improved packing density"],
+            period: "8–14 months"
         },
         industries: [
-            "Textile mills",
-            "Fabric processing units",
-            "Garment export houses",
-            "Fabric warehousing & packing units"
+            "Fabric packing units",
+            "Export houses",
+            "Warehousing and logistics"
         ],
         comparison: [
-            { feature: "Folding Accuracy", cardwell: "High (Servo)", market: "Avg (Mechanical)", advantage: true },
-            { feature: "Throughput", cardwell: "High", market: "Medium", advantage: true },
+            { feature: "Folding Uniformity", cardwell: "High (Servo)", market: "Variable (Manual)", advantage: true },
+            { feature: "Speed", cardwell: "High", market: "Low", advantage: true },
             { feature: "Labor Req.", cardwell: "Minimal", market: "High", advantage: true },
         ]
     },
+
     {
         id: "apron-doffing-device",
         name: "Apron-Doffing Device",
