@@ -624,7 +624,7 @@ export const products: Product[] = [
     {
         id: "apron-doffing-device",
         name: "Apron-Doffing Device",
-        category: "Spinning Accessory",
+        category: "Ring Frame",
         image: "/img/apron-doffing.png",
         video: "/videos/demo.mp4",
         description: "Automated apron-doffing device designed to increase efficiency and reduce manual labor in ring frames.",
@@ -636,7 +636,7 @@ export const products: Product[] = [
     {
         id: "carding-solutions",
         name: "Carding Solutions",
-        category: "Spinning Accessory",
+        category: "Carding",
         image: "/img/draw-frame.png",
         video: "/videos/demo.mp4",
         description: "Precision engineered components to enhance carding machine performance and sliver quality.",
@@ -648,7 +648,7 @@ export const products: Product[] = [
     {
         id: "comber-accessories",
         name: "Comber Accessories",
-        category: "Spinning Accessory",
+        category: "Comber",
         image: "/img/comber.png",
         video: "/videos/demo.mp4",
         description: "High-performance parts for combers to ensure optimal removal of short fibers.",
@@ -660,7 +660,7 @@ export const products: Product[] = [
     {
         id: "simplex-frame-parts",
         name: "Simplex Frame Parts",
-        category: "Spinning Accessory",
+        category: "Speed Frame",
         image: "/img/speed-frame.png",
         video: "https://cdn.coverr.co/videos/coverr-industrial-machine-working-5536/1080p.mp4",
         description: "Robust spares for speed frames ensuring consistent roving tension and quality.",
@@ -672,7 +672,7 @@ export const products: Product[] = [
     {
         id: "ring-frame-components",
         name: "Ring Frame Components",
-        category: "Spinning Accessory",
+        category: "Ring Frame",
         image: "/img/apron-doffing.png",
         video: "https://cdn.coverr.co/videos/coverr-manufacturing-plant-5347/1080p.mp4",
         description: "Essential components for ring spinning frames to maintain high yarn quality and speed.",
